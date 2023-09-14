@@ -1,7 +1,11 @@
 import "./PlantCard.css";
 
 const PlantCard = () => {
-  return <div className="PlantCard">PlantCard works</div>;
+  return (
+    <div className="PlantCard">
+      <button>nickname needs water!</button>
+    </div>
+  );
 };
 
 export default PlantCard;
