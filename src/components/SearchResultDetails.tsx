@@ -8,7 +8,11 @@ interface Props {
 const SearchResultDetails = ({ setShowNumber }: Props) => {
   return (
     <div className="SearchResultDetails">
-      <div>Show Details About Plant</div>
+      <section>
+        <h2>Plant Details</h2>
+        <p>PLANT INFO GOES HERE</p>
+      </section>
+      <img src="" alt="sample plant image" />
       <AddPlantForm />
     </div>
   );
