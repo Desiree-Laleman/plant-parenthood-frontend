@@ -3,13 +3,15 @@ import "./SearchPlantForm.css";
 
 interface Props {
   setShowNumber: (number: number) => void;
+  searchPlants: (query: string) => void;
 }
 
-const SearchPlantForm = ({ setShowNumber }: Props) => {
-  const [search, setSearch] = useState("");
+const SearchPlantForm = ({ setShowNumber, searchPlants }: Props) => {
+  const [query, setQuery] = useState("");
 
   const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
+    searchPlants(query);
     setShowNumber(2);
   };
 
@@ -30,8 +32,8 @@ const SearchPlantForm = ({ setShowNumber }: Props) => {
           name="search"
           id="search"
           placeholder="Plant Search"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
         />
         <button>Search</button>
       </form>
