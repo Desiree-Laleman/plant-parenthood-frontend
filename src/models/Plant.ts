@@ -3,6 +3,8 @@ export default interface Plant {
   googleId: string;
   nickName: string;
   commonName: string;
+  scientificName: string;
+  otherName: string;
   watering: number;
   pic?: string;
 }

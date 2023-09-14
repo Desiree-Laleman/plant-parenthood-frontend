@@ -1,3 +1,4 @@
+import { useState } from "react";
 import SearchResultsCard from "./SearchResultsCard";
 import "./SearchResultsList.css";
 
@@ -6,10 +7,14 @@ interface Props {
 }
 
 const SearchResultsList = ({ setShowNumber }: Props) => {
+  const [searchResults, setSearchResults] = useState([]);
+
   return (
-    <div className="SearchResultsList">
-      <SearchResultsCard />
-    </div>
+    <ul className="SearchResultsList">
+      {searchResults.map((item) => (
+        <SearchResultsCard item={item} setShowNumber={setShowNumber} />
+      ))}
+    </ul>
   );
 };
 

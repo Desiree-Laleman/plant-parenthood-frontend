@@ -6,10 +6,13 @@ interface Props {
 }
 
 const SearchPlantForm = ({ setShowNumber }: Props) => {
+  const [search, setSearch] = useState("");
+
   const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
     setShowNumber(2);
   };
+
   return (
     <div className="SearchPlantForm">
       <button onClick={() => setShowNumber(0)}>Go Back</button>
@@ -21,15 +24,15 @@ const SearchPlantForm = ({ setShowNumber }: Props) => {
         placeholder="Plant Nickname"
         value={nickname}
         onChange={(e) => setNickname(e.target.value)}
-      />
-      <input
-        type="text"
-        name="search"
-        id="search"
-        placeholder="Plant Search"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
       /> */}
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Plant Search"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
         <button>Search</button>
       </form>
     </div>
