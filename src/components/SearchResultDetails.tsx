@@ -1,3 +1,4 @@
+import { FormEvent } from "react";
 import AddPlantForm from "./AddPlantForm";
 import "./SearchResultDetails.css";
 
@@ -6,14 +7,20 @@ interface Props {
 }
 
 const SearchResultDetails = ({ setShowNumber }: Props) => {
+  const handleSubmit = (e: FormEvent): void => {
+    e.preventDefault();
+  };
   return (
     <div className="SearchResultDetails">
-      <section>
-        <h2>Plant Details</h2>
-        <p>PLANT INFO GOES HERE</p>
-      </section>
-      <img src="" alt="sample plant image" />
-      <AddPlantForm />
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <input
+          type="text"
+          name="nickname"
+          id="nickname"
+          placeholder="Plant Nickname"
+        />
+        <button>ADD PLANT</button>
+      </form>
     </div>
   );
 };

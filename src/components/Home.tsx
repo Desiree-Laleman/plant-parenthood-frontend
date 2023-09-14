@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Home.css";
 import PlantList from "./PlantList";
 import SearchPlantForm from "./SearchPlantForm";
@@ -12,11 +12,15 @@ const Home = () => {
   const [plants, setPlants] = useState<Plant[]>([]);
   const [searchResults, setSearchResults] = useState<PerenualPlant[]>([]);
   const [showNumber, setShowNumber] = useState(0);
+  const [chosenPlant, setChosenPlant] = useState<Plant | null>(null);
 
   const searchPlants = async (query: string): Promise<void> => {
     console.log((await getPlantsBySearch(query)).data);
     setSearchResults((await getPlantsBySearch(query)).data);
   };
+  useEffect(() => {
+    console.log(chosenPlant);
+  }, [chosenPlant]);
 
   return (
     <div className="Home">
@@ -27,7 +31,13 @@ const Home = () => {
           searchPlants={searchPlants}
         />
       )}
-      {showNumber === 2 && <SearchResultsList setShowNumber={setShowNumber} />}
+      {showNumber === 2 && (
+        <SearchResultsList
+          setShowNumber={setShowNumber}
+          searchResults={searchResults}
+          setChosenPlant={setChosenPlant}
+        />
+      )}
       {showNumber === 3 && (
         <SearchResultDetails setShowNumber={setShowNumber} />
       )}

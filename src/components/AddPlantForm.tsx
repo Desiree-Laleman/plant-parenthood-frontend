@@ -8,15 +8,6 @@ const AddPlantForm = () => {
 
   return (
     <div className="AddPlantForm">
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <input
-          type="text"
-          name="nickname"
-          id="nickname"
-          placeholder="Plant Nickname"
-        />
-        <button>ADD PLANT</button>
-      </form>
       <button>Cancel</button>
     </div>
   );
