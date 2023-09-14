@@ -1,18 +1,20 @@
 import { FormEvent, useState } from "react";
-import "./PlantForm.css";
+import "./SearchPlantForm.css";
 
-const PlantForm = () => {
-  const [nickname, setNickname] = useState("");
-  const [search, setSearch] = useState("");
+interface Props {
+  setShowNumber: (number: number) => void;
+}
 
+const SearchPlantForm = ({ setShowNumber }: Props) => {
   const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
-    setNickname("");
-    setSearch("");
+    setShowNumber(2);
   };
   return (
-    <form className="PlantForm" onSubmit={(e) => handleSubmit(e)}>
-      <input
+    <div className="SearchPlantForm">
+      <button onClick={() => setShowNumber(0)}>Go Back</button>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        {/* <input
         type="text"
         name="nickname"
         id="nickname"
@@ -27,10 +29,11 @@ const PlantForm = () => {
         placeholder="Plant Search"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-      />
-      <button>Add Plant</button>
-    </form>
+      /> */}
+        <button>Search</button>
+      </form>
+    </div>
   );
 };
 
-export default PlantForm;
+export default SearchPlantForm;
