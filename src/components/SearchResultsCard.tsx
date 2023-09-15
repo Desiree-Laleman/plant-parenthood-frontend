@@ -1,5 +1,6 @@
 import PerenualPlant from "../models/PerenualPlant";
 import "./SearchResultsCard.css";
+import plantDefaultImage from "../assets/plant-default-image.png";
 
 interface Props {
   perenualPlant: PerenualPlant;
@@ -23,7 +24,14 @@ const SearchResultsCard = ({
         <p>Scientific Name: {perenualPlant.scientific_name}</p>
         <p>Other Name: {perenualPlant.other_name}</p>
       </div>
-      <img src={perenualPlant.default_image?.thumbnail} alt="plant image" />
+      <img
+        src={
+          perenualPlant.default_image?.thumbnail
+            ? perenualPlant.default_image?.thumbnail
+            : plantDefaultImage
+        }
+        alt="plant image"
+      />
     </li>
   );
 };

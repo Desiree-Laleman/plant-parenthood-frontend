@@ -2,6 +2,7 @@ import "./SearchResultDetails.css";
 import AddPlantForm from "./AddPlantForm";
 import PerenualPlant from "../models/PerenualPlant";
 import Plant from "../models/Plant";
+import plantDefaultImage from "../assets/plant-default-image.png";
 
 interface Props {
   setShowNumber: (number: number) => void;
@@ -25,7 +26,14 @@ const SearchResultDetails = ({
           <li>Watering: {searchedPlant.watering}</li>
           <li>Sunlight: {searchedPlant.sunlight}</li>
         </ul>
-        <img src={searchedPlant.default_image?.thumbnail} alt="plant image" />
+        <img
+          src={
+            searchedPlant.default_image?.thumbnail
+              ? searchedPlant.default_image?.thumbnail
+              : plantDefaultImage
+          }
+          alt="plant image"
+        />
       </div>
       <AddPlantForm
         setShowNumber={setShowNumber}

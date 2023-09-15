@@ -3,6 +3,7 @@ import "./AddPlantForm.css";
 import Plant from "../models/Plant";
 import PerenualPlant from "../models/PerenualPlant";
 import AuthContext from "../context/AuthContext";
+import plantDefaultImage from "../assets/plant-default-image.png";
 
 interface Props {
   setShowNumber: (number: number) => void;
@@ -27,6 +28,11 @@ const AddPlantForm = ({
         : searchedPlant.watering === "minimum"
         ? 7
         : null;
+
+    const plantCardPicture = searchedPlant.default_image?.thumbnail
+      ? searchedPlant.default_image?.thumbnail
+      : plantDefaultImage;
+
     const plant: Plant = {
       perenualId: searchedPlant.id,
       googleId: user?.uid!,
@@ -35,6 +41,7 @@ const AddPlantForm = ({
       scientificName: searchedPlant.scientific_name,
       otherName: searchedPlant.other_name,
       watering: wateringFrequency,
+      pic: plantCardPicture,
     };
     addPlantHandler(plant);
     setShowNumber(0);
