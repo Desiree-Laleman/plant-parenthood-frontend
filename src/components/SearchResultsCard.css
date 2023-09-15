@@ -1,0 +1,20 @@
+.SearchResultsCard {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  margin: 10px 0;
+  border: none;
+  background: limegreen;
+}
+
+.SearchResultsCard:hover {
+  background: lime;
+}
+
+.SearchResultsCard div p {
+  margin: 0px;
+  padding: 0 15px;
+}
+.SearchResultsCard img {
+  width: 15%;
+}

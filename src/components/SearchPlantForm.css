@@ -1,0 +1,16 @@
+.SearchPlantForm {
+  border: 1px solid black;
+  background: green;
+}
+
+.SearchPlantForm form {
+  margin: 0;
+}
+
+.SearchPlantForm button {
+  padding: 5px 35px;
+  margin: 5px;
+}
+.SearchPlantForm input {
+  margin: 0 10px;
+}

@@ -10,5 +10,6 @@ export default interface PerenualPlant {
   cycle: string;
   watering: string;
   sunlight: string[];
+  // poisonous_to_pets: number;
   default_image: null | DefaultImage;
 }

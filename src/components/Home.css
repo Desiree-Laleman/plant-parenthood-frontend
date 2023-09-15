@@ -1,0 +1,14 @@
+.Home {
+  height: 100vh;
+  background: rgb(220, 150, 105);
+}
+
+.Home button {
+  padding: 8px 45px;
+  background: lime;
+  border-radius: 12px;
+  border: none;
+}
+.Home button:hover {
+  background: limegreen;
+}
