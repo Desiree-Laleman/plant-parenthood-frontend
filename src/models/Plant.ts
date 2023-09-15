@@ -1,5 +1,6 @@
 export default interface Plant {
   _id?: string;
+  perenualId: number;
   googleId: string;
   nickName: string;
   commonName: string;

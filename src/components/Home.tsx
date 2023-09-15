@@ -15,9 +15,9 @@ const Home = () => {
   const [chosenPlant, setChosenPlant] = useState<Plant | null>(null);
 
   const searchPlants = async (query: string): Promise<void> => {
-    console.log((await getPlantsBySearch(query)).data);
     setSearchResults((await getPlantsBySearch(query)).data);
   };
+
   useEffect(() => {
     console.log(chosenPlant);
   }, [chosenPlant]);
@@ -39,7 +39,7 @@ const Home = () => {
         />
       )}
       {showNumber === 3 && (
-        <SearchResultDetails setShowNumber={setShowNumber} />
+        <SearchResultDetails setShowNumber={setShowNumber} item={chosenPlant} />
       )}
       {plants.length ? <PlantList /> : <p>Add a plant</p>}
     </div>

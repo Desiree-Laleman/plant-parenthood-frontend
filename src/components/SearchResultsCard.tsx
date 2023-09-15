@@ -15,6 +15,7 @@ const SearchResultsCard = ({ item, setShowNumber, setChosenPlant }: Props) => {
   const handleClick = (e: any) => {
     setShowNumber(3);
     const plant: Plant = {
+      perenualId: item.id,
       googleId: user?.uid!,
       nickName: "",
       commonName: item.common_name,
