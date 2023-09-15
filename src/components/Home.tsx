@@ -7,7 +7,7 @@ import SearchResultsList from "./SearchResultsList";
 import Plant from "../models/Plant";
 import { getPlantByID, getPlantsBySearch } from "../services/perenualService";
 import PerenualPlant from "../models/PerenualPlant";
-import { addPlant, getUserPlants } from "../services/userServices";
+import { addPlant, deletePlant, getUserPlants } from "../services/userServices";
 import AuthContext from "../context/AuthContext";
 
 const Home = () => {
@@ -38,6 +38,14 @@ const Home = () => {
     loadUserPlants();
   };
 
+  const deletePlantHandler = async (
+    googleId: string,
+    _id: string
+  ): Promise<void> => {
+    await deletePlant(googleId, _id);
+    loadUserPlants();
+  };
+
   return (
     <div className="Home">
       <button onClick={() => setShowNumber(1)}>Add Plant</button>
@@ -61,7 +69,11 @@ const Home = () => {
           addPlantHandler={addPlantHandler}
         />
       )}
-      {plants.length ? <PlantList /> : <p>Add a plant</p>}
+      {plants.length ? (
+        <PlantList plants={plants} deletePlantHandler={deletePlantHandler} />
+      ) : (
+        <p>Add a plant</p>
+      )}
     </div>
   );
 };
