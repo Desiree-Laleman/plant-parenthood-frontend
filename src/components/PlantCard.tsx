@@ -1,6 +1,11 @@
+import Plant from "../models/Plant";
 import "./PlantCard.css";
 
-const PlantCard = () => {
+interface Props {
+  item: Plant;
+}
+
+const PlantCard = ({ item }: Props) => {
   return (
     <div className="PlantCard">
       <button>nickname needs water!</button>

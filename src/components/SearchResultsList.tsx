@@ -1,27 +1,26 @@
-import { useState } from "react";
 import SearchResultsCard from "./SearchResultsCard";
 import "./SearchResultsList.css";
 import PerenualPlant from "../models/PerenualPlant";
-import Plant from "../models/Plant";
 
 interface Props {
   setShowNumber: (number: number) => void;
   searchResults: PerenualPlant[];
-  setChosenPlant: (plant: Plant) => void;
+
+  searchedPlantById: (id: number) => void;
 }
 
 const SearchResultsList = ({
   setShowNumber,
   searchResults,
-  setChosenPlant,
+  searchedPlantById,
 }: Props) => {
   return (
     <ul className="SearchResultsList">
       {searchResults.map((item) => (
         <SearchResultsCard
-          item={item}
+          perenualPlant={item}
           setShowNumber={setShowNumber}
-          setChosenPlant={setChosenPlant}
+          searchedPlantById={searchedPlantById}
         />
       ))}
     </ul>

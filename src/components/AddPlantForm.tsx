@@ -1,13 +1,42 @@
-import { FormEvent } from "react";
+import { FormEvent, useContext, useState } from "react";
 import "./AddPlantForm.css";
+import Plant from "../models/Plant";
+import PerenualPlant from "../models/PerenualPlant";
+import AuthContext from "../context/AuthContext";
 
 interface Props {
   setShowNumber: (number: number) => void;
+  addPlantHandler: (plant: Plant) => void;
+  searchedPlant: PerenualPlant;
 }
 
-const AddPlantForm = ({ setShowNumber }: Props) => {
+const AddPlantForm = ({
+  setShowNumber,
+  addPlantHandler,
+  searchedPlant,
+}: Props) => {
+  const { user } = useContext(AuthContext);
+  const [nickName, setNickName] = useState("");
   const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
+    const wateringFrequency =
+      searchedPlant.watering === "frequent"
+        ? 2
+        : searchedPlant.watering === "average"
+        ? 4
+        : searchedPlant.watering === "minimum"
+        ? 7
+        : null;
+    const plant: Plant = {
+      perenualId: searchedPlant.id,
+      googleId: user?.uid!,
+      nickName,
+      commonName: searchedPlant.common_name,
+      scientificName: searchedPlant.scientific_name,
+      otherName: searchedPlant.other_name,
+      watering: wateringFrequency,
+    };
+    addPlantHandler(plant);
     setShowNumber(0);
   };
 
@@ -19,6 +48,8 @@ const AddPlantForm = ({ setShowNumber }: Props) => {
           name="nickname"
           id="nickname"
           placeholder="Plant Nickname"
+          value={nickName}
+          onChange={(e) => setNickName(e.target.value)}
         />
         <button>ADD PLANT</button>
       </form>
