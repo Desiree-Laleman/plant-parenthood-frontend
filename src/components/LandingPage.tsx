@@ -15,11 +15,11 @@ const LandingPage = ({ setShowLandingPage }: Props) => {
   return (
     <div
       className="LandingPage"
-      style={{ backgroundImage: `url(${wateringGif})` }}
+      // style={{ backgroundImage: `url(${wateringGif})` }}
     >
       <h1>Plant Parenthood</h1>
       <img src={clover} alt="clover" />
-      <img src={wateringGif} alt="clover" />
+      {/* <img src={wateringGif} alt="clover" /> */}
       <button onClick={landingPageCollapse}>Sign in with Google</button>
     </div>
   );
