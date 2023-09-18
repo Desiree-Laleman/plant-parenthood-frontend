@@ -13,7 +13,7 @@ function App() {
       )}
       {!showLandingPage && (
         <>
-          <Header />
+          <Header setShowLandingPage={setShowLandingPage} />
           <Home />
         </>
       )}

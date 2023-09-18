@@ -1,0 +1,10 @@
+.LandingPage {
+  /* background-image: url("../assets/anime-watering-gif.webp"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
