@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import "./Home.css";
 import PlantList from "./PlantList";
 import SearchPlantForm from "./SearchPlantForm";
@@ -23,15 +23,15 @@ const Home = () => {
     setSearchResults((await getPlantsBySearch(query)).data);
   };
 
-  const loadUserPlants = async (): Promise<void> => {
-    if (user) {
-      setPlants(await getUserPlants(user.uid));
-    }
-  };
-
   const searchedPlantById = async (id: number): Promise<void> => {
     setSearchedPlant(await getPlantByID(id));
   };
+
+  const loadUserPlants = useCallback(async (): Promise<void> => {
+    if (user) {
+      setPlants(await getUserPlants(user.uid));
+    }
+  }, [user]);
 
   const addPlantHandler = async (plant: Plant): Promise<void> => {
     await addPlant(plant);
@@ -46,9 +46,17 @@ const Home = () => {
     loadUserPlants();
   };
 
+  useEffect(() => {
+    (async () => {
+      loadUserPlants();
+    })();
+  }, [user, loadUserPlants]);
+
   return (
     <div className="Home">
-      <button onClick={() => setShowNumber(1)}>Add Plant</button>
+      <button id="add-plant" onClick={() => setShowNumber(1)}>
+        Add Plant
+      </button>
       {showNumber === 1 && (
         <SearchPlantForm
           setShowNumber={setShowNumber}

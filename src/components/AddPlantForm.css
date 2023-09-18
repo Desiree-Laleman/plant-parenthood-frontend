@@ -1,0 +1,18 @@
+.AddPlantForm {
+  display: flex;
+  justify-content: center;
+}
+.AddPlantForm form button {
+  background-color: lime;
+  margin: 0 5px;
+}
+.AddPlantForm form button:hover {
+  background-color: limegreen;
+}
+.AddPlantForm button {
+  margin: 0 5px;
+  background-color: red;
+}
+.AddPlantForm button:hover {
+  background-color: darkred;
+}

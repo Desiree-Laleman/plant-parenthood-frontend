@@ -1,0 +1,20 @@
+.SearchResultDetails {
+  background-color: green;
+  padding-bottom: 10px;
+}
+.SearchResultDetails h2 {
+  display: flex;
+  justify-content: center;
+}
+.SearchResultDetails div {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+.SearchResultDetails ul {
+  padding: 0 10px;
+  list-style-type: none;
+}
+.SearchResultDetails img {
+  padding-bottom: 10px;
+}

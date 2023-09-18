@@ -1,0 +1,9 @@
+.PlantList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.PlantList ul {
+  list-style-type: none;
+  padding: 0;
+}

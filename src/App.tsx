@@ -1,12 +1,22 @@
+import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import LandingPage from "./components/LandingPage";
 
 function App() {
+  const [showLandingPage, setShowLandingPage] = useState(true);
   return (
     <div className="App">
-      <Header />
-      <Home />
+      {showLandingPage && (
+        <LandingPage setShowLandingPage={setShowLandingPage} />
+      )}
+      {!showLandingPage && (
+        <>
+          <Header />
+          <Home />
+        </>
+      )}
     </div>
   );
 }

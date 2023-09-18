@@ -1,0 +1,18 @@
+.PlantCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5px;
+}
+.PlantCard #plant-water {
+  background-color: lightblue;
+}
+.PlantCard #plant-water:hover {
+  background-color: lightskyblue;
+}
+.PlantCard #plant-delete {
+  background-color: red;
+}
+.PlantCard #plant-delete:hover {
+  background-color: darkred;
+}

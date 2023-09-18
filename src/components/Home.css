@@ -1,8 +1,10 @@
 .Home {
   height: 100vh;
   background: rgb(220, 150, 105);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 .Home button {
   padding: 8px 45px;
   background: lime;
@@ -11,4 +13,10 @@
 }
 .Home button:hover {
   background: limegreen;
+}
+.Home ul {
+  padding: 0;
+}
+.Home #add-plant {
+  margin-top: 5px;
 }

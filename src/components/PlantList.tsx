@@ -1,4 +1,3 @@
-import { useState } from "react";
 import PlantCard from "./PlantCard";
 import "./PlantList.css";
 import Plant from "../models/Plant";
@@ -10,11 +9,17 @@ interface Props {
 
 const PlantList = ({ plants, deletePlantHandler }: Props) => {
   return (
-    <ul className="PlantList">
-      {plants.map((item) => (
-        <PlantCard item={item} deletePlantHandler={deletePlantHandler} />
-      ))}
-    </ul>
+    <>
+      <ul className="PlantList">
+        {plants.map((item) => (
+          <PlantCard
+            item={item}
+            deletePlantHandler={deletePlantHandler}
+            key={item._id}
+          />
+        ))}
+      </ul>
+    </>
   );
 };
 
