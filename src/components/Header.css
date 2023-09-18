@@ -1,7 +1,12 @@
 .Header {
   background: lightgreen;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
+.Header img {
+  width: 60px;
+}
 .Header button {
   margin: 10px;
   padding: 5px 35px;

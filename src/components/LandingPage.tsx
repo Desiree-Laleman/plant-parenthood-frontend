@@ -1,7 +1,20 @@
 import "./LandingPage.css";
+import { signInWithGoogle } from "../firebaseConfig";
 
-const LandingPage = () => {
-  return <div className="LandingPage">LandingPage works</div>;
+interface Props {
+  setShowLandingPage: (boolean: boolean) => void;
+}
+
+const LandingPage = ({ setShowLandingPage }: Props) => {
+  const landingPageCollapse = () => {
+    signInWithGoogle();
+    setShowLandingPage(false);
+  };
+  return (
+    <div className="LandingPage">
+      <button onClick={landingPageCollapse}>Sign in with Google</button>
+    </div>
+  );
 };
 
 export default LandingPage;
