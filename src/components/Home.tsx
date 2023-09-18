@@ -7,14 +7,21 @@ import SearchResultsList from "./SearchResultsList";
 import Plant from "../models/Plant";
 import { getPlantByID, getPlantsBySearch } from "../services/perenualService";
 import PerenualPlant from "../models/PerenualPlant";
-import { addPlant, deletePlant, getUserPlants } from "../services/userServices";
+import {
+  addPlant,
+  deletePlant,
+  editPlant,
+  getUserPlants,
+} from "../services/userServices";
 import AuthContext from "../context/AuthContext";
+import EditPlantForm from "./EditPlantForm";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
   const [plants, setPlants] = useState<Plant[]>([]);
   const [searchResults, setSearchResults] = useState<PerenualPlant[]>([]);
   const [showNumber, setShowNumber] = useState(0);
+  const [nickName, setNickName] = useState("");
   const [searchedPlant, setSearchedPlant] = useState<PerenualPlant | null>(
     null
   );
@@ -36,6 +43,15 @@ const Home = () => {
   const addPlantHandler = async (plant: Plant): Promise<void> => {
     await addPlant(plant);
     loadUserPlants();
+  };
+
+  const editPlantHandler = async (nickName: string): Promise<void> => {
+    let TPlant = plants.find((item) => item.nickName === nickName);
+    if (TPlant) {
+      TPlant = { ...TPlant, nickName };
+      await editPlant(TPlant);
+      loadUserPlants();
+    }
   };
 
   const deletePlantHandler = async (
@@ -77,8 +93,20 @@ const Home = () => {
           addPlantHandler={addPlantHandler}
         />
       )}
+      {showNumber === 4 && (
+        <EditPlantForm
+          setShowNumber={setShowNumber}
+          editPlantHandler={editPlantHandler}
+          nickName={nickName}
+        />
+      )}
       {plants.length ? (
-        <PlantList plants={plants} deletePlantHandler={deletePlantHandler} />
+        <PlantList
+          plants={plants}
+          deletePlantHandler={deletePlantHandler}
+          setShowNumber={setShowNumber}
+          setNickName={setNickName}
+        />
       ) : (
         <p>Add a plant</p>
       )}

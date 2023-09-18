@@ -27,16 +27,12 @@ export const addPlant = async (plant: Plant): Promise<Plant> => {
   return (await axios.post(`${baseURL}/users/plants`, plant)).data;
 };
 
-export const editPlant = async (
-  googleId: string,
-  _id: string,
-  plant: Plant
-): Promise<Plant> => {
+export const editPlant = async (plant: Plant): Promise<Plant> => {
   return (
     await axios.put(
       `${baseURL}/users/${encodeURIComponent(
-        googleId
-      )}/plants/${encodeURIComponent(_id)}`,
+        plant.googleId
+      )}/plants/${encodeURIComponent(plant._id!)}`,
       plant
     )
   ).data;
