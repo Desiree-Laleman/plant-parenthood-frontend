@@ -28,6 +28,7 @@ export const addPlant = async (plant: Plant): Promise<Plant> => {
 };
 
 export const editPlant = async (plant: Plant): Promise<Plant> => {
+  console.log(plant);
   return (
     await axios.put(
       `${baseURL}/users/${encodeURIComponent(

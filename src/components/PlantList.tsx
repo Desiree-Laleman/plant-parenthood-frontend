@@ -6,22 +6,22 @@ interface Props {
   plants: Plant[];
   deletePlantHandler: (googleId: string, _id: string) => void;
   setShowNumber: (number: number) => void;
-  setNickName: (string: string) => void;
+  setEditIndex: (number: number) => void;
 }
 
 const PlantList = ({
   plants,
   deletePlantHandler,
   setShowNumber,
-  setNickName,
+  setEditIndex,
 }: Props) => {
   return (
     <>
       <ul className="PlantList">
-        {plants.map((item) => (
+        {plants.map((item, index) => (
           <PlantCard
             item={item}
-            setNickName={setNickName}
+            setEditIndex={() => setEditIndex(index)}
             setShowNumber={setShowNumber}
             deletePlantHandler={deletePlantHandler}
             key={item._id}

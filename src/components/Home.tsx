@@ -18,10 +18,10 @@ import EditPlantForm from "./EditPlantForm";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
+  const [showNumber, setShowNumber] = useState(0);
+  const [editIndex, setEditIndex] = useState<number | null>(null);
   const [plants, setPlants] = useState<Plant[]>([]);
   const [searchResults, setSearchResults] = useState<PerenualPlant[]>([]);
-  const [showNumber, setShowNumber] = useState(0);
-  const [nickName, setNickName] = useState("");
   const [searchedPlant, setSearchedPlant] = useState<PerenualPlant | null>(
     null
   );
@@ -47,6 +47,7 @@ const Home = () => {
 
   const editPlantHandler = async (nickName: string): Promise<void> => {
     let TPlant = plants.find((item) => item.nickName === nickName);
+    console.log(TPlant);
     if (TPlant) {
       TPlant = { ...TPlant, nickName };
       await editPlant(TPlant);
@@ -93,11 +94,11 @@ const Home = () => {
           addPlantHandler={addPlantHandler}
         />
       )}
-      {showNumber === 4 && (
+      {editIndex != null && (
         <EditPlantForm
-          setShowNumber={setShowNumber}
+          setEditIndex={setEditIndex}
           editPlantHandler={editPlantHandler}
-          nickName={nickName}
+          plant={plants[editIndex]}
         />
       )}
       {plants.length ? (
@@ -105,7 +106,7 @@ const Home = () => {
           plants={plants}
           deletePlantHandler={deletePlantHandler}
           setShowNumber={setShowNumber}
-          setNickName={setNickName}
+          setEditIndex={setEditIndex}
         />
       ) : (
         <p>Add a plant</p>

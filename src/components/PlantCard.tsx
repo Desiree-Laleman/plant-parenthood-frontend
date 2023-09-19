@@ -5,18 +5,18 @@ interface Props {
   item: Plant;
   deletePlantHandler: (googleId: string, _id: string) => void;
   setShowNumber: (number: number) => void;
-  setNickName: (string: string) => void;
+  setEditIndex: () => void;
 }
 
 const PlantCard = ({
   item,
   deletePlantHandler,
   setShowNumber,
-  setNickName,
+  setEditIndex,
 }: Props) => {
   const handleClick = () => {
-    setNickName(item.nickName);
-    setShowNumber(4);
+    setEditIndex();
+    setShowNumber(0);
   };
   return (
     <li className="PlantCard">
