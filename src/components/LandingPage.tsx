@@ -1,7 +1,6 @@
 import "./LandingPage.css";
 import { signInWithGoogle } from "../firebaseConfig";
 import clover from "../assets/three-leaf-clover.png";
-import wateringGif from "../assets/anime-watering-gif.webp";
 
 interface Props {
   setShowLandingPage: (boolean: boolean) => void;

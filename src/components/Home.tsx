@@ -15,6 +15,7 @@ import {
 } from "../services/userServices";
 import AuthContext from "../context/AuthContext";
 import EditPlantForm from "./EditPlantForm";
+import datetimeDifference from "datetime-difference";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
@@ -25,6 +26,25 @@ const Home = () => {
   const [searchedPlant, setSearchedPlant] = useState<PerenualPlant | null>(
     null
   );
+  const [currentDate, setCurrentDate] = useState(new Date());
+
+  const date1 = new Date("12/17/2016, 05:23:55 PM");
+  // when "plant needs water" is clicked this date should update
+
+  const result = datetimeDifference(date1, currentDate); /* result is {
+    "years": 0,
+    "months": 2,
+    "days": 3,
+    "hours": 13,
+    "minutes": 48,
+    "seconds": 47,
+    "milliseconds": 0
+} */
+
+  // Yet another example of formatting (using the string-format library as an example):
+  // import format from "string-format";
+  // const string = format("{days} days left", result);
+  // string is "3 days left"
 
   const searchPlants = async (query: string): Promise<void> => {
     setSearchResults((await getPlantsBySearch(query)).data);
@@ -45,14 +65,9 @@ const Home = () => {
     loadUserPlants();
   };
 
-  const editPlantHandler = async (nickName: string): Promise<void> => {
-    let TPlant = plants.find((item) => item.nickName === nickName);
-    console.log(TPlant);
-    if (TPlant) {
-      TPlant = { ...TPlant, nickName };
-      await editPlant(TPlant);
-      loadUserPlants();
-    }
+  const editPlantHandler = async (plant: Plant): Promise<void> => {
+    await editPlant(plant);
+    loadUserPlants();
   };
 
   const deletePlantHandler = async (
@@ -66,6 +81,7 @@ const Home = () => {
   useEffect(() => {
     (async () => {
       loadUserPlants();
+      console.log(result);
     })();
   }, [user, loadUserPlants]);
 
