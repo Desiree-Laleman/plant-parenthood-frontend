@@ -4,27 +4,25 @@ import "./ClickedPlantDetails.css";
 import { FormEvent, useRef, useState } from "react";
 
 interface Props {
-  setShowNumber: (number: number) => void;
+  setEditIndex: (number: number | null) => void;
   editPlantHandler: (nickName: string) => void;
-  nickName: string;
+  plant: Plant;
 }
 
-const EditPlantForm = ({
-  setShowNumber,
-  editPlantHandler,
-  nickName,
-}: Props) => {
+const EditPlantForm = ({ setEditIndex, editPlantHandler, plant }: Props) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [updatedNickName, setUpdatedNickName] = useState(nickName || "");
+  const [updatedNickName, setUpdatedNickName] = useState(plant.nickName || "");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     await editPlantHandler(updatedNickName);
-    setShowNumber(0);
+    setEditIndex(null);
   };
+  console.log(plant);
   return (
     <>
       <form className="EditPlantForm" onSubmit={(e) => handleSubmit(e)}>
+        <img src={plant.pic} alt={plant.commonName} />
         <label htmlFor="upload">Picture Upload</label>
         <input ref={fileInputRef} type="file" name="upload" id="upload" />
         <input
@@ -36,7 +34,7 @@ const EditPlantForm = ({
         />
         <button>EDIT PLANT</button>
       </form>
-      <button onClick={() => setShowNumber(0)}>Cancel</button>
+      <button onClick={() => setEditIndex(null)}>Cancel</button>
     </>
   );
 };
