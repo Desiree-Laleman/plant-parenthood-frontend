@@ -14,6 +14,9 @@ interface Props {
 const EditPlantForm = ({ setEditIndex, editPlantHandler, plant }: Props) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [updatedNickName, setUpdatedNickName] = useState(plant.nickName || "");
+  const [updateWateringFrequency, setUpdateWateringFrequency] = useState(
+    plant.watering || ""
+  );
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -28,21 +31,34 @@ const EditPlantForm = ({ setEditIndex, editPlantHandler, plant }: Props) => {
     }
 
     update.nickName = updatedNickName;
+    update.watering = Number(updateWateringFrequency);
     await editPlantHandler(update);
     setEditIndex(null);
   };
+  console.log(plant.watering);
   return (
     <>
       <form className="EditPlantForm" onSubmit={(e) => handleSubmit(e)}>
         <img src={plant.pic} alt={plant.commonName} />
         <label htmlFor="upload">Picture Upload</label>
         <input ref={fileInputRef} type="file" name="upload" id="upload" />
+        <label htmlFor="updateNickName">Update Nickname: </label>
         <input
           type="text"
           name="updatedNickName"
           id="updatedNickName"
           value={updatedNickName}
           onChange={(e) => setUpdatedNickName(e.target.value)}
+        />
+        <label htmlFor="wateringFrequency">
+          Update Watering Frequency (days):{" "}
+        </label>
+        <input
+          type="number"
+          name="wateringFrequency"
+          id="wateringFrequency"
+          value={updateWateringFrequency}
+          onChange={(e) => setUpdateWateringFrequency(e.target.value)}
         />
         <button>EDIT PLANT</button>
       </form>

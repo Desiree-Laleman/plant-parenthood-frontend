@@ -7,6 +7,7 @@ interface Props {
   deletePlantHandler: (googleId: string, _id: string) => void;
   setShowNumber: (number: number) => void;
   setEditIndex: (number: number) => void;
+  editPlantHandler: (plant: Plant) => void;
 }
 
 const PlantList = ({
@@ -14,6 +15,7 @@ const PlantList = ({
   deletePlantHandler,
   setShowNumber,
   setEditIndex,
+  editPlantHandler,
 }: Props) => {
   return (
     <>
@@ -24,6 +26,7 @@ const PlantList = ({
             setEditIndex={() => setEditIndex(index)}
             setShowNumber={setShowNumber}
             deletePlantHandler={deletePlantHandler}
+            editPlantHandler={editPlantHandler}
             key={item._id}
           />
         ))}

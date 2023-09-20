@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Plant from "../models/Plant";
 import "./PlantCard.css";
 
@@ -6,13 +7,17 @@ interface Props {
   deletePlantHandler: (googleId: string, _id: string) => void;
   setShowNumber: (number: number) => void;
   setEditIndex: () => void;
+  editPlantHandler: (plant: Plant) => void;
 }
+
+// const [waterButtonClick, setWaterButtonClick] = useState("")
 
 const PlantCard = ({
   plant,
   deletePlantHandler,
   setShowNumber,
   setEditIndex,
+  editPlantHandler,
 }: Props) => {
   const handleClick = () => {
     setEditIndex();
@@ -25,16 +30,24 @@ const PlantCard = ({
   const timeRemaining = plant.watering - differenceInDays;
   console.log(timeRemaining, differenceInDays);
 
+  const waterButtonHandler = () => {
+    const plantCopy = { ...plant };
+    plantCopy.waterDate = new Date();
+    editPlantHandler(plantCopy);
+  };
+
   return (
     <li className="PlantCard">
       <img src={plant.pic} alt={plant.commonName} />
       <p>{plant.nickName}</p>
-      {timeRemaining < 0 ? (
-        <p>Overdue</p>
-      ) : timeRemaining === 0 ? (
-        <p>Due</p>
+      {timeRemaining < -1 ? (
+        <button onClick={waterButtonHandler}>Overdue</button>
+      ) : timeRemaining > -1 && timeRemaining < 0 ? (
+        <button onClick={waterButtonHandler}>Water Me!</button>
       ) : (
-        <p>Okay!</p>
+        <button onClick={waterButtonHandler}>
+          Water in {Math.ceil(timeRemaining)} days
+        </button>
       )}
       <button onClick={handleClick}>Edit</button>
       <button
