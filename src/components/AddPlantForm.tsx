@@ -21,13 +21,13 @@ const AddPlantForm = ({
   const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
     const wateringFrequency =
-      searchedPlant.watering === "frequent"
-        ? 2
-        : searchedPlant.watering === "average"
-        ? 4
-        : searchedPlant.watering === "minimum"
+      searchedPlant.watering === "Frequent"
         ? 7
-        : null;
+        : searchedPlant.watering === "Average"
+        ? 14
+        : searchedPlant.watering === "Minimum"
+        ? 21
+        : 28;
 
     const plantCardPicture = searchedPlant.default_image?.thumbnail
       ? searchedPlant.default_image?.thumbnail
@@ -41,6 +41,7 @@ const AddPlantForm = ({
       scientificName: searchedPlant.scientific_name,
       otherName: searchedPlant.other_name,
       watering: wateringFrequency,
+      waterDate: new Date(),
       pic: plantCardPicture,
     };
     addPlantHandler(plant);
