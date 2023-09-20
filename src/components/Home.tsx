@@ -102,6 +102,7 @@ const Home = () => {
           deletePlantHandler={deletePlantHandler}
           setShowNumber={setShowNumber}
           setEditIndex={setEditIndex}
+          editPlantHandler={editPlantHandler}
         />
       ) : (
         <p>Add a plant</p>
