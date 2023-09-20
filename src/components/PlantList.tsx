@@ -20,7 +20,7 @@ const PlantList = ({
       <ul className="PlantList">
         {plants.map((item, index) => (
           <PlantCard
-            item={item}
+            plant={item}
             setEditIndex={() => setEditIndex(index)}
             setShowNumber={setShowNumber}
             deletePlantHandler={deletePlantHandler}

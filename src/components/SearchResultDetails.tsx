@@ -15,6 +15,7 @@ const SearchResultDetails = ({
   addPlantHandler,
   searchedPlant,
 }: Props) => {
+  console.log(searchedPlant.watering);
   return (
     <div className="SearchResultDetails">
       <h2>ADD PLANT FORM</h2>
@@ -23,7 +24,16 @@ const SearchResultDetails = ({
           <li>Common Name: {searchedPlant.common_name}</li>
           <li>Scientific Name: {searchedPlant.scientific_name}</li>
           <li>Cycle: {searchedPlant.cycle}</li>
-          <li>Watering: {searchedPlant.watering}</li>
+          <li>
+            Watering:{" "}
+            {searchedPlant.watering === "Frequent"
+              ? "Every 7 Days"
+              : searchedPlant.watering === "Average"
+              ? "Every 14 Days"
+              : searchedPlant.watering === "Minimum"
+              ? "Every 21 days"
+              : "Every 28 days"}
+          </li>
           <li>Sunlight: {searchedPlant.sunlight}</li>
         </ul>
         <img

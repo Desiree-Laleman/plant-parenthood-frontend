@@ -6,6 +6,7 @@ export default interface Plant {
   commonName: string;
   scientificName: string[];
   otherName: string[];
-  watering: number | null;
+  watering: number;
+  waterDate: Date;
   pic?: string;
 }

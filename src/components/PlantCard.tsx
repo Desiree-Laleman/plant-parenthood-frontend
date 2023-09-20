@@ -2,14 +2,14 @@ import Plant from "../models/Plant";
 import "./PlantCard.css";
 
 interface Props {
-  item: Plant;
+  plant: Plant;
   deletePlantHandler: (googleId: string, _id: string) => void;
   setShowNumber: (number: number) => void;
   setEditIndex: () => void;
 }
 
 const PlantCard = ({
-  item,
+  plant,
   deletePlantHandler,
   setShowNumber,
   setEditIndex,
@@ -18,14 +18,28 @@ const PlantCard = ({
     setEditIndex();
     setShowNumber(0);
   };
+
+  const differenceInTime =
+    new Date().getTime() - new Date(plant.waterDate).getTime();
+  const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+  const timeRemaining = plant.watering - differenceInDays;
+  console.log(timeRemaining, differenceInDays);
+
   return (
     <li className="PlantCard">
-      <img src={item.pic} alt={item.commonName} />
-      <button id="plant-water">{item.nickName} needs water!</button>
+      <img src={plant.pic} alt={plant.commonName} />
+      <p>{plant.nickName}</p>
+      {timeRemaining < 0 ? (
+        <p>Overdue</p>
+      ) : timeRemaining === 0 ? (
+        <p>Due</p>
+      ) : (
+        <p>Okay!</p>
+      )}
       <button onClick={handleClick}>Edit</button>
       <button
         id="plant-delete"
-        onClick={() => deletePlantHandler(item.googleId, item._id!)}
+        onClick={() => deletePlantHandler(plant.googleId, plant._id!)}
       >
         Delete
       </button>
