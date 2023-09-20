@@ -15,6 +15,7 @@ import {
 } from "../services/userServices";
 import AuthContext from "../context/AuthContext";
 import EditPlantForm from "./EditPlantForm";
+import ClickedPlantDetails from "./ClickedPlantDetails";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
@@ -89,6 +90,12 @@ const Home = () => {
           addPlantHandler={addPlantHandler}
         />
       )}
+      {showNumber === 4 && searchedPlant && (
+        <ClickedPlantDetails
+          setShowNumber={setShowNumber}
+          plant={searchedPlant}
+        />
+      )}
       {editIndex != null && (
         <EditPlantForm
           setEditIndex={setEditIndex}
@@ -103,6 +110,7 @@ const Home = () => {
           setShowNumber={setShowNumber}
           setEditIndex={setEditIndex}
           editPlantHandler={editPlantHandler}
+          searchedPlantById={searchedPlantById}
         />
       ) : (
         <p>Add a plant</p>

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Plant from "../models/Plant";
 import "./PlantCard.css";
 
@@ -8,9 +7,8 @@ interface Props {
   setShowNumber: (number: number) => void;
   setEditIndex: () => void;
   editPlantHandler: (plant: Plant) => void;
+  searchedPlantById: (perenualId: number) => void;
 }
-
-// const [waterButtonClick, setWaterButtonClick] = useState("")
 
 const PlantCard = ({
   plant,
@@ -18,6 +16,7 @@ const PlantCard = ({
   setShowNumber,
   setEditIndex,
   editPlantHandler,
+  searchedPlantById,
 }: Props) => {
   const handleClick = () => {
     setEditIndex();
@@ -36,9 +35,18 @@ const PlantCard = ({
     editPlantHandler(plantCopy);
   };
 
+  const seeDetails = async () => {
+    await searchedPlantById(plant.perenualId);
+    setShowNumber(4);
+  };
+
   return (
     <li className="PlantCard">
-      <img src={plant.pic} alt={plant.commonName} />
+      <img
+        src={plant.pic}
+        alt={plant.commonName}
+        onClick={() => seeDetails()}
+      />
       <p>{plant.nickName}</p>
       {timeRemaining < -1 ? (
         <button onClick={waterButtonHandler}>Overdue</button>
