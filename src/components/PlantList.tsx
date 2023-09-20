@@ -8,6 +8,7 @@ interface Props {
   setShowNumber: (number: number) => void;
   setEditIndex: (number: number) => void;
   editPlantHandler: (plant: Plant) => void;
+  searchedPlantById: (perenualId: number) => void;
 }
 
 const PlantList = ({
@@ -16,6 +17,7 @@ const PlantList = ({
   setShowNumber,
   setEditIndex,
   editPlantHandler,
+  searchedPlantById,
 }: Props) => {
   return (
     <>
@@ -28,6 +30,7 @@ const PlantList = ({
             deletePlantHandler={deletePlantHandler}
             editPlantHandler={editPlantHandler}
             key={item._id}
+            searchedPlantById={searchedPlantById}
           />
         ))}
       </ul>
