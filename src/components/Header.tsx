@@ -1,23 +1,19 @@
 import "./Header.css";
 import { signOut } from "../firebaseConfig";
 import clover from "../assets/three-leaf-clover.png";
+import logo from "../assets/plant-parenthood-logo.png";
 
-interface Props {
-  setShowLandingPage: (boolean: boolean) => void;
-}
-
-const Header = ({ setShowLandingPage }: Props) => {
-  const landingPageReturn = () => {
-    signOut();
-    setShowLandingPage(true);
-  };
+const Header = () => {
   return (
-    <div className="Header">
-      <img src={clover} alt="three leaf clover logo" />
+    <header className="Header">
+      <img src={clover} id="clover-logo" alt="three leaf clover logo" />
+      <h1>
+        <img src={logo} id="plant-parenthood" alt="Plant Parenthood" />
+      </h1>
       <div>
-        <button onClick={landingPageReturn}>Sign out</button>
+        <button onClick={signOut}>Sign out</button>
       </div>
-    </div>
+    </header>
   );
 };
 

@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import LandingPage from "./components/LandingPage";
+import AuthContext from "./context/AuthContext";
 
 function App() {
-  const [showLandingPage, setShowLandingPage] = useState(true);
+  const { user } = useContext(AuthContext);
+
   return (
     <div className="App">
-      {showLandingPage && (
-        <LandingPage setShowLandingPage={setShowLandingPage} />
-      )}
-      {!showLandingPage && (
+      {!user && <LandingPage />}
+      {user && (
         <>
-          <Header setShowLandingPage={setShowLandingPage} />
+          <Header />
           <Home />
         </>
       )}

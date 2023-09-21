@@ -1,0 +1,21 @@
+.ClickedPlantDetails ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+.ClickedPlantDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  padding: 0 10px;
+}
+.ClickedPlantDetails button {
+  background-color: red;
+}
+.ClickedPlantDetails button:hover {
+  background-color: darkred;
+}
