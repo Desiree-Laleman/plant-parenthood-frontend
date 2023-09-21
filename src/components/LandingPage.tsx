@@ -1,6 +1,7 @@
 import "./LandingPage.css";
 import { signInWithGoogle } from "../firebaseConfig";
 import clover from "../assets/three-leaf-clover.png";
+import logo from "../assets/plant-parenthood-logo.png";
 
 interface Props {
   setShowLandingPage: (boolean: boolean) => void;
@@ -16,8 +17,17 @@ const LandingPage = ({ setShowLandingPage }: Props) => {
       className="LandingPage"
       // style={{ backgroundImage: `url(${wateringGif})` }}
     >
-      <h1>Plant Parenthood</h1>
-      <img src={clover} alt="clover" />
+      <section id="logo-container">
+        <h1 className="logo">
+          <img src={logo} alt="Plant Parenthood" />
+        </h1>
+        <p className="slogan">Your Guide to Happy, Healthy Plants</p>
+      </section>
+      <div id="paragraph-container">
+        <p>Are your plants thirsty or thriving?</p>
+        {/* <p className="line">Do you know when they need a little extra love?</p> */}
+      </div>
+      <img src={clover} alt="clover" className="clover-image" />
       {/* <img src={wateringGif} alt="clover" /> */}
       <button onClick={landingPageCollapse}>Sign in with Google</button>
     </div>
