@@ -1,0 +1,26 @@
+.EditPlantForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  background-image: linear-gradient(135deg, #94e08f 0%, #45a827 100%);
+  padding: 15px;
+  border-radius: 10px;
+}
+.EditPlantForm img {
+  width: 250px;
+  height: 250px;
+}
+.EditPlantForm div {
+  display: flex;
+  flex-direction: column;
+}
+.EditPlantForm button {
+  margin-top: 10px;
+}
+.EditPlantForm #cancel {
+  background-color: red;
+}
+.EditPlantForm #cancel:hover {
+  background-color: darkred;
+}

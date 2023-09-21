@@ -39,30 +39,36 @@ const EditPlantForm = ({ setEditIndex, editPlantHandler, plant }: Props) => {
   return (
     <>
       <form className="EditPlantForm" onSubmit={(e) => handleSubmit(e)}>
-        <img src={plant.pic} alt={plant.commonName} />
-        <label htmlFor="upload">Picture Upload</label>
-        <input ref={fileInputRef} type="file" name="upload" id="upload" />
-        <label htmlFor="updateNickName">Update Nickname: </label>
-        <input
-          type="text"
-          name="updatedNickName"
-          id="updatedNickName"
-          value={updatedNickName}
-          onChange={(e) => setUpdatedNickName(e.target.value)}
-        />
-        <label htmlFor="wateringFrequency">
-          Update Watering Frequency (days):{" "}
-        </label>
-        <input
-          type="number"
-          name="wateringFrequency"
-          id="wateringFrequency"
-          value={updateWateringFrequency}
-          onChange={(e) => setUpdateWateringFrequency(e.target.value)}
-        />
+        <div>
+          <img src={plant.pic} alt={plant.commonName} />
+          <label htmlFor="upload">Picture Upload</label>
+          <input ref={fileInputRef} type="file" name="upload" id="upload" />
+        </div>
+        <div>
+          <label htmlFor="updateNickName">Update Nickname: </label>
+          <input
+            type="text"
+            name="updatedNickName"
+            id="updatedNickName"
+            value={updatedNickName}
+            onChange={(e) => setUpdatedNickName(e.target.value)}
+          />
+          <label htmlFor="wateringFrequency">
+            Update Watering Frequency (days):{" "}
+          </label>
+          <input
+            type="number"
+            name="wateringFrequency"
+            id="wateringFrequency"
+            value={updateWateringFrequency}
+            onChange={(e) => setUpdateWateringFrequency(e.target.value)}
+          />
+        </div>
         <button>EDIT PLANT</button>
       </form>
-      <button onClick={() => setEditIndex(null)}>Cancel</button>
+      <button id="cancel" onClick={() => setEditIndex(null)}>
+        Cancel
+      </button>
     </>
   );
 };

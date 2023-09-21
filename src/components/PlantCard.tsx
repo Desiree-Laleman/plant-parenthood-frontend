@@ -49,11 +49,15 @@ const PlantCard = ({
       />
       <p>{plant.nickName}</p>
       {timeRemaining < -1 ? (
-        <button onClick={waterButtonHandler}>Overdue</button>
+        <button className="overdue" onClick={waterButtonHandler}>
+          Overdue
+        </button>
       ) : timeRemaining > -1 && timeRemaining < 0 ? (
-        <button onClick={waterButtonHandler}>Water Me!</button>
+        <button className="waterMe" onClick={waterButtonHandler}>
+          Water Me!
+        </button>
       ) : (
-        <button onClick={waterButtonHandler}>
+        <button className="watered" onClick={waterButtonHandler}>
           Water in {Math.ceil(timeRemaining)} days
         </button>
       )}

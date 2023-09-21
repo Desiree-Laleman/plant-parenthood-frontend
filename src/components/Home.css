@@ -1,18 +1,19 @@
 .Home {
   height: 100vh;
-  background: rgb(220, 150, 105);
+  background-image: linear-gradient(135deg, #e2af92 0%, #b36d35 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .Home button {
+  color: white;
   padding: 8px 45px;
-  background: lime;
+  background: rgb(39, 78, 19);
   border-radius: 12px;
   border: none;
 }
 .Home button:hover {
-  background: limegreen;
+  background: #555;
 }
 .Home ul {
   padding: 0;

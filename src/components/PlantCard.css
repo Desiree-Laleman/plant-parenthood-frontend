@@ -4,14 +4,39 @@
   justify-content: center;
   padding: 0 5px;
 }
-.PlantCard #plant-water {
-  background-color: lightblue;
+
+.PlantCard img {
+  width: 250px;
+  height: 250px;
 }
-.PlantCard #plant-water:hover {
-  background-color: lightskyblue;
+
+.PlantCard .watered {
+  color: white;
+  background-color: rgb(59, 59, 165);
 }
+.PlantCard .watered:hover {
+  color: white;
+  background-color: rgb(128, 128, 161);
+}
+
+.PlantCard .waterMe {
+  color: black;
+  background-color: rgb(118, 188, 235);
+}
+.PlantCard .waterMe:hover {
+  background-color: rgb(148, 166, 177);
+}
+
+.PlantCard .overdue {
+  color: black;
+  background-color: rgb(240, 237, 34);
+}
+.PlantCard .overdue:hover {
+  background-color: rgb(206, 186, 9);
+}
+
 .PlantCard #plant-delete {
-  background-color: red;
+  background-color: rgb(224, 9, 9);
 }
 .PlantCard #plant-delete:hover {
   background-color: darkred;

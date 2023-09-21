@@ -2,13 +2,14 @@
   display: flex;
   align-items: center;
   padding: 10px 0;
-  margin: 10px 0;
+  margin: 5px 0;
   border: none;
-  background: limegreen;
+  border-radius: 10px;
+  background-image: linear-gradient(135deg, #6caf67 0%, #2f721b 100%);
 }
 
 .SearchResultsCard:hover {
-  background: lime;
+  background-image: linear-gradient(135deg, #97e491 0%, #4ebb2d 100%);
 }
 
 .SearchResultsCard div p {

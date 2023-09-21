@@ -3,15 +3,7 @@ import { signInWithGoogle } from "../firebaseConfig";
 import clover from "../assets/three-leaf-clover.png";
 import logo from "../assets/plant-parenthood-logo.png";
 
-interface Props {
-  setShowLandingPage: (boolean: boolean) => void;
-}
-
-const LandingPage = ({ setShowLandingPage }: Props) => {
-  const landingPageCollapse = () => {
-    signInWithGoogle();
-    setShowLandingPage(false);
-  };
+const LandingPage = () => {
   return (
     <div
       className="LandingPage"
@@ -29,7 +21,7 @@ const LandingPage = ({ setShowLandingPage }: Props) => {
       </div>
       <img src={clover} alt="clover" className="clover-image" />
       {/* <img src={wateringGif} alt="clover" /> */}
-      <button onClick={landingPageCollapse}>Sign in with Google</button>
+      <button onClick={signInWithGoogle}>Sign in with Google</button>
     </div>
   );
 };
