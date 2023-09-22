@@ -72,7 +72,7 @@ const EditPlantForm = ({ setEditIndex, editPlantHandler, plant }: Props) => {
           </div>
         </form>
         <button id="cancel" onClick={() => setEditIndex(null)}>
-          Cancel
+          x
         </button>
       </div>
     </div>

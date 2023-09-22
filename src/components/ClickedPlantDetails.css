@@ -9,8 +9,25 @@
   padding: 0;
 }
 .ClickedPlantDetails button {
-  background-color: red;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 1px 8px;
+  font-size: 20px;
+  font-weight: bold;
+  background: none;
+  color: rgba(255, 255, 255, 0.736);
+  background-image: linear-gradient(135deg, #6caf67 0%, #2f721b 100%);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
+
 .ClickedPlantDetails button:hover {
-  background-color: darkred;
+  background-image: linear-gradient(135deg, #80bf7b 0%, #4d9a36 100%);
+}
+
+.ClickedPlantDetails button:active {
+  background-image: linear-gradient(135deg, #6caf67 0%, #2f721b 100%);
 }

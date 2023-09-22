@@ -41,7 +41,7 @@ const ClickedPlantDetails = ({ setShowNumber, plant }: Props) => {
           <li>Growth Rate: {plant.growth_rate}</li>
           <li>Invasive: {plant.invasive ? "True" : "False"}</li>
         </ul>
-        <button onClick={() => setShowNumber(0)}>Cancel</button>
+        <button onClick={() => setShowNumber(0)}>x</button>
       </div>
     </div>
   );

@@ -36,7 +36,9 @@ const SearchPlantForm = ({ setShowNumber, searchPlants }: Props) => {
         />
         <button>Search</button>
       </form>
-      <button onClick={() => setShowNumber(0)}>Go Back</button>
+      <button id="search-form-delete" onClick={() => setShowNumber(0)}>
+        x
+      </button>
     </div>
   );
 };
