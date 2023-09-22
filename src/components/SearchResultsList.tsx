@@ -16,7 +16,9 @@ const SearchResultsList = ({
 }: Props) => {
   return (
     <>
-      <button onClick={() => setShowNumber(0)}>X</button>
+      <button id="search-list-cancel" onClick={() => setShowNumber(0)}>
+        x
+      </button>
       <ul className="SearchResultsList">
         {searchResults.map((item) => (
           <SearchResultsCard

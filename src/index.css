@@ -15,9 +15,10 @@ body {
 }
 
 .pop-up {
+  position: relative;
   background-image: linear-gradient(135deg, #94e08f 0%, #45a827 100%);
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 27px 22px 20px 22px;
   border-radius: 10px;
 }
