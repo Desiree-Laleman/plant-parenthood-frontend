@@ -15,15 +15,18 @@ const SearchResultsList = ({
   searchedPlantById,
 }: Props) => {
   return (
-    <ul className="SearchResultsList">
-      {searchResults.map((item) => (
-        <SearchResultsCard
-          perenualPlant={item}
-          setShowNumber={setShowNumber}
-          searchedPlantById={searchedPlantById}
-        />
-      ))}
-    </ul>
+    <>
+      <button onClick={() => setShowNumber(0)}>X</button>
+      <ul className="SearchResultsList">
+        {searchResults.map((item) => (
+          <SearchResultsCard
+            perenualPlant={item}
+            setShowNumber={setShowNumber}
+            searchedPlantById={searchedPlantById}
+          />
+        ))}
+      </ul>
+    </>
   );
 };
 
