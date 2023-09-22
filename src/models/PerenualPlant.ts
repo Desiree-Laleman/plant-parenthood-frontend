@@ -12,4 +12,10 @@ export default interface PerenualPlant {
   sunlight: string[];
   // poisonous_to_pets: number;
   default_image: null | DefaultImage;
+  maintenance: string;
+  invasive: boolean;
+  family: string;
+  growth_rate: string;
+  flowers: boolean;
+  flowering_season: string | null;
 }

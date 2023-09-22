@@ -11,15 +11,15 @@ const ClickedPlantDetails = ({ setShowNumber, plant }: Props) => {
   return (
     <div className="ClickedPlantDetails">
       <ul>
-        <li>Plant Common Name: {plant.common_name}</li>
-        <li>Plant Scientific Name: {plant.scientific_name}</li>
+        <li>Plant Family: {plant.family}</li>
+        <li>Common Name: {plant.common_name}</li>
+        <li>Scientific Name: {plant.scientific_name}</li>
         <li>
-          Plant Other Name:{" "}
+          Other Name:{" "}
           {plant.other_name.length > 0 ? plant.other_name : "Not Available"}
         </li>
-        <li>Plant Cycle: {plant.cycle}</li>
         <li>
-          Plant Watering Recommendation:{" "}
+          Watering Recommendation:{" "}
           {plant.watering === "Frequent"
             ? "7 Days"
             : plant.watering === "Average"
@@ -28,7 +28,17 @@ const ClickedPlantDetails = ({ setShowNumber, plant }: Props) => {
             ? "21 Days"
             : "28 Days"}
         </li>
-        <li>Plant Sunlight: {plant.sunlight}</li>
+        <li>Sunlight Recommendation: {plant.sunlight}</li>
+        <li>Plant Cycle: {plant.cycle}</li>
+        <li>Maintenance: {plant.maintenance}</li>
+        <li>Flowering: {plant.flowers ? "True" : "False"}</li>
+        <li>
+          {plant.flowering_season === null
+            ? `Flowering Season: Not Announced`
+            : `Flowering Season: ${plant.flowering_season}`}
+        </li>
+        <li>Growth Rate: {plant.growth_rate}</li>
+        <li>Invasive: {plant.invasive ? "True" : "False"}</li>
       </ul>
       <button onClick={() => setShowNumber(0)}>Cancel</button>
     </div>

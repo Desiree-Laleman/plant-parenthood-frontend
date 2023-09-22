@@ -27,7 +27,6 @@ const PlantCard = ({
     new Date().getTime() - new Date(plant.waterDate).getTime();
   const differenceInDays = differenceInTime / (1000 * 3600 * 24);
   const timeRemaining = plant.watering - differenceInDays;
-  console.log(timeRemaining, differenceInDays);
 
   const waterButtonHandler = () => {
     const plantCopy = { ...plant };
