@@ -61,12 +61,14 @@ const PlantCard = ({
           Water in {Math.ceil(timeRemaining)} days
         </button>
       )}
-      <button onClick={handleClick}>Edit</button>
+      <button id="edit-button" onClick={handleClick}>
+        Edit
+      </button>
       <button
         id="plant-delete"
         onClick={() => deletePlantHandler(plant.googleId, plant._id!)}
       >
-        Delete
+        x
       </button>
     </li>
   );
