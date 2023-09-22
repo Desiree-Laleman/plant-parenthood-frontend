@@ -8,6 +8,7 @@ interface Props {
   setEditIndex: () => void;
   editPlantHandler: (plant: Plant) => void;
   searchedPlantById: (perenualId: number) => void;
+  calculateTimeRemaining: (plant: Plant) => number;
 }
 
 const PlantCard = ({
@@ -17,16 +18,12 @@ const PlantCard = ({
   setEditIndex,
   editPlantHandler,
   searchedPlantById,
+  calculateTimeRemaining,
 }: Props) => {
   const handleClick = () => {
     setEditIndex();
     setShowNumber(0);
   };
-
-  const differenceInTime =
-    new Date().getTime() - new Date(plant.waterDate).getTime();
-  const differenceInDays = differenceInTime / (1000 * 3600 * 24);
-  const timeRemaining = plant.watering - differenceInDays;
 
   const waterButtonHandler = () => {
     const plantCopy = { ...plant };
@@ -47,17 +44,18 @@ const PlantCard = ({
         onClick={() => seeDetails()}
       />
       <p>{plant.nickName}</p>
-      {timeRemaining < -1 ? (
+      {calculateTimeRemaining(plant) < -1 ? (
         <button className="overdue" onClick={waterButtonHandler}>
           Overdue
         </button>
-      ) : timeRemaining > -1 && timeRemaining < 0 ? (
+      ) : calculateTimeRemaining(plant) > -1 &&
+        calculateTimeRemaining(plant) < 0 ? (
         <button className="waterMe" onClick={waterButtonHandler}>
           Water Me!
         </button>
       ) : (
         <button className="watered" onClick={waterButtonHandler}>
-          Water in {Math.ceil(timeRemaining)} days
+          Water in {Math.ceil(calculateTimeRemaining(plant))} days
         </button>
       )}
       <button id="edit-button" onClick={handleClick}>

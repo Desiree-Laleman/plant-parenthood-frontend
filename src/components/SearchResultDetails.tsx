@@ -17,39 +17,41 @@ const SearchResultDetails = ({
 }: Props) => {
   console.log(searchedPlant.watering);
   return (
-    <div className="SearchResultDetails">
-      <h2>ADD PLANT FORM</h2>
-      <div id="plant-details-containers">
-        <ul>
-          <li>Common Name: {searchedPlant.common_name}</li>
-          <li>Scientific Name: {searchedPlant.scientific_name}</li>
-          <li>Cycle: {searchedPlant.cycle}</li>
-          <li>
-            Watering:{" "}
-            {searchedPlant.watering === "Frequent"
-              ? "Every 7 Days"
-              : searchedPlant.watering === "Average"
-              ? "Every 14 Days"
-              : searchedPlant.watering === "Minimum"
-              ? "Every 21 days"
-              : "Every 28 days"}
-          </li>
-          <li>Sunlight: {searchedPlant.sunlight}</li>
-        </ul>
-        <img
-          src={
-            searchedPlant.default_image?.thumbnail
-              ? searchedPlant.default_image?.thumbnail
-              : plantDefaultImage
-          }
-          alt="plant image"
+    <div className="SearchResultDetails pop-up-container">
+      <div className="pop-up">
+        <h2>ADD PLANT FORM</h2>
+        <div id="plant-details-containers">
+          <ul>
+            <li>Common Name: {searchedPlant.common_name}</li>
+            <li>Scientific Name: {searchedPlant.scientific_name}</li>
+            <li>Cycle: {searchedPlant.cycle}</li>
+            <li>
+              Watering:{" "}
+              {searchedPlant.watering === "Frequent"
+                ? "Every 7 Days"
+                : searchedPlant.watering === "Average"
+                ? "Every 14 Days"
+                : searchedPlant.watering === "Minimum"
+                ? "Every 21 days"
+                : "Every 28 days"}
+            </li>
+            <li>Sunlight: {searchedPlant.sunlight}</li>
+          </ul>
+          <img
+            src={
+              searchedPlant.default_image?.thumbnail
+                ? searchedPlant.default_image?.thumbnail
+                : plantDefaultImage
+            }
+            alt="plant image"
+          />
+        </div>
+        <AddPlantForm
+          setShowNumber={setShowNumber}
+          addPlantHandler={addPlantHandler}
+          searchedPlant={searchedPlant}
         />
       </div>
-      <AddPlantForm
-        setShowNumber={setShowNumber}
-        addPlantHandler={addPlantHandler}
-        searchedPlant={searchedPlant}
-      />
     </div>
   );
 };
