@@ -96,7 +96,7 @@ const Home = () => {
           plant={searchedPlant}
         />
       )}
-      {plants.length ? (
+      {showNumber != 2 && plants.length ? (
         <PlantList
           plants={plants}
           deletePlantHandler={deletePlantHandler}
@@ -106,7 +106,7 @@ const Home = () => {
           searchedPlantById={searchedPlantById}
         />
       ) : (
-        <p id="add-a-plant">Add a plant</p>
+        ""
       )}
       {editIndex != null && (
         <EditPlantForm

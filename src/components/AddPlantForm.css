@@ -1,6 +1,7 @@
 .AddPlantForm {
   display: flex;
   justify-content: center;
+  margin-bottom: 15px;
 }
 .AddPlantForm form button {
   background-color: rgb(39, 78, 19);
