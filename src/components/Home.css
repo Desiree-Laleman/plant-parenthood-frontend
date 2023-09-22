@@ -1,16 +1,20 @@
 .Home {
-  height: 100vh;
-  background-image: linear-gradient(135deg, #e2af92 0%, #b36d35 100%);
+  /* height: 100vh; */
+  background-image: url("../assets/home-background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .Home button {
   color: white;
   padding: 8px 45px;
   background: rgb(39, 78, 19);
   border-radius: 12px;
   border: none;
+  cursor: pointer;
 }
 .Home button:hover {
   background: #555;
@@ -19,5 +23,27 @@
   padding: 0;
 }
 .Home #add-plant {
-  margin-top: 5px;
+  margin-top: 10px;
+  background-image: linear-gradient(
+    135deg,
+    rgba(253, 252, 251, 0.9) 0%,
+    rgba(226, 209, 195, 0.9) 100%
+  );
+  color: rgb(67, 72, 76);
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.Home #add-plant:hover {
+  background-image: linear-gradient(
+    135deg,
+    rgba(253, 252, 251, 0.5) 0%,
+    rgba(226, 209, 195, 0.5) 100%
+  );
+  opacity: 0.9;
+}
+
+.Home #add-a-plant {
+  color: white;
 }

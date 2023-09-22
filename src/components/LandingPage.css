@@ -1,5 +1,5 @@
 .LandingPage {
-  background-image: url("../assets/plant-parenthood-background.jpg");
+  background-image: url("../assets/landing-page-mobile-2.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -14,9 +14,8 @@
 .LandingPage #logo-container {
   text-align: left;
   position: absolute;
-  top: 20px;
-  left: 40px;
-  margin: 0;
+  top: 0px;
+  left: 10px;
 }
 
 .LandingPage .logo {
@@ -26,18 +25,18 @@
 .LandingPage #logo-container .slogan {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: rgb(39, 78, 19);
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .LandingPage #paragraph-container {
   margin: 10px;
   font-family: Georgia, "Times New Roman", Times, serif;
   color: rgb(39, 78, 19);
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .LandingPage h1 img {
-  width: 45%;
+  width: 65%;
   height: auto;
 }
 
@@ -64,4 +63,42 @@
 .LandingPage button:hover {
   background-color: #555;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (min-width: 768px) {
+  .LandingPage {
+    background-image: url("../assets/plant-parenthood-background.jpg");
+  }
+
+  .LandingPage h1 img {
+    width: 65%;
+    height: auto;
+  }
+
+  .LandingPage #logo-container {
+    top: 10px;
+    left: 25px;
+    margin: 0;
+  }
+
+  .LandingPage #logo-container .slogan {
+    font-size: 20px;
+  }
+
+  .LandingPage #paragraph-container {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 821px) {
+  .LandingPage h1 img {
+    width: 55%;
+    height: auto;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .LandingPage h1 img {
+    width: 45%;
+    height: auto;
+  }
 }
