@@ -66,7 +66,7 @@ const Home = () => {
   }, [user, loadUserPlants]);
 
   return (
-    <div className="Home">
+    <main className="Home">
       <button id="add-plant" onClick={() => setShowNumber(1)}>
         Add Plant
       </button>
@@ -113,9 +113,9 @@ const Home = () => {
           searchedPlantById={searchedPlantById}
         />
       ) : (
-        <p>Add a plant</p>
+        <p id="add-a-plant">Add a plant</p>
       )}
-    </div>
+    </main>
   );
 };
 
