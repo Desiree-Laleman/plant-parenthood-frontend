@@ -37,39 +37,45 @@ const EditPlantForm = ({ setEditIndex, editPlantHandler, plant }: Props) => {
   };
   console.log(plant.watering);
   return (
-    <>
-      <form className="EditPlantForm" onSubmit={(e) => handleSubmit(e)}>
-        <div>
-          <img src={plant.pic} alt={plant.commonName} />
-          <label htmlFor="upload">Picture Upload</label>
-          <input ref={fileInputRef} type="file" name="upload" id="upload" />
-        </div>
-        <div>
-          <label htmlFor="updateNickName">Update Nickname: </label>
-          <input
-            type="text"
-            name="updatedNickName"
-            id="updatedNickName"
-            value={updatedNickName}
-            onChange={(e) => setUpdatedNickName(e.target.value)}
-          />
-          <label htmlFor="wateringFrequency">
-            Update Watering Frequency (days):{" "}
-          </label>
-          <input
-            type="number"
-            name="wateringFrequency"
-            id="wateringFrequency"
-            value={updateWateringFrequency}
-            onChange={(e) => setUpdateWateringFrequency(e.target.value)}
-          />
-        </div>
-        <button>EDIT PLANT</button>
-      </form>
-      <button id="cancel" onClick={() => setEditIndex(null)}>
-        Cancel
-      </button>
-    </>
+    <div className="EditPlantForm pop-up-container">
+      <div className="pop-up">
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <div>
+            <div id="edit-plant-image-container">
+              <img src={plant.pic} alt={plant.commonName} />
+            </div>
+            <label htmlFor="upload">Picture Upload</label>
+            <input ref={fileInputRef} type="file" name="upload" id="upload" />
+          </div>
+          <div>
+            <label htmlFor="updateNickName">Update Nickname: </label>
+            <input
+              type="text"
+              name="updatedNickName"
+              id="updatedNickName"
+              value={updatedNickName}
+              onChange={(e) => setUpdatedNickName(e.target.value)}
+            />
+            <label htmlFor="wateringFrequency">
+              Update Watering Frequency (days):{" "}
+            </label>
+            <input
+              type="number"
+              name="wateringFrequency"
+              id="wateringFrequency"
+              value={updateWateringFrequency}
+              onChange={(e) => setUpdateWateringFrequency(e.target.value)}
+            />
+          </div>
+          <div id="edit-plant-button-container">
+            <button>EDIT PLANT</button>
+          </div>
+        </form>
+        <button id="cancel" onClick={() => setEditIndex(null)}>
+          Cancel
+        </button>
+      </div>
+    </div>
   );
 };
 

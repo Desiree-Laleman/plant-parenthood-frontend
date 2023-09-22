@@ -1,15 +1,28 @@
-.EditPlantForm {
+/* .EditPlantForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 10px;
   background-image: linear-gradient(135deg, #94e08f 0%, #45a827 100%);
   padding: 15px;
   border-radius: 10px;
-}
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 50%;
+} */
+
 .EditPlantForm img {
   width: 250px;
   height: 250px;
+  align-self: center;
+}
+.EditPlantForm #edit-plant-image-container {
+  display: flex;
+  justify-content: center;
 }
 .EditPlantForm div {
   display: flex;
@@ -18,6 +31,11 @@
 .EditPlantForm button {
   margin-top: 10px;
 }
+
+.EditPlantForm form button {
+  align-self: center;
+}
+
 .EditPlantForm #cancel {
   background-color: red;
 }

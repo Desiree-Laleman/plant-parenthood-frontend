@@ -96,13 +96,6 @@ const Home = () => {
           plant={searchedPlant}
         />
       )}
-      {editIndex != null && (
-        <EditPlantForm
-          setEditIndex={setEditIndex}
-          editPlantHandler={editPlantHandler}
-          plant={plants[editIndex]}
-        />
-      )}
       {plants.length ? (
         <PlantList
           plants={plants}
@@ -114,6 +107,13 @@ const Home = () => {
         />
       ) : (
         <p id="add-a-plant">Add a plant</p>
+      )}
+      {editIndex != null && (
+        <EditPlantForm
+          setEditIndex={setEditIndex}
+          editPlantHandler={editPlantHandler}
+          plant={plants[editIndex]}
+        />
       )}
     </main>
   );

@@ -12,10 +12,10 @@ function App() {
     <div className="App">
       {!user && <LandingPage />}
       {user && (
-        <>
+        <div id="container">
           <Header />
           <Home />
-        </>
+        </div>
       )}
     </div>
   );
