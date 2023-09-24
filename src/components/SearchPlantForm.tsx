@@ -18,14 +18,6 @@ const SearchPlantForm = ({ setShowNumber, searchPlants }: Props) => {
   return (
     <div className="SearchPlantForm">
       <form onSubmit={(e) => handleSubmit(e)}>
-        {/* <input
-        type="text"
-        name="nickname"
-        id="nickname"
-        placeholder="Plant Nickname"
-        value={nickname}
-        onChange={(e) => setNickname(e.target.value)}
-      /> */}
         <input
           type="text"
           name="search"
@@ -36,8 +28,8 @@ const SearchPlantForm = ({ setShowNumber, searchPlants }: Props) => {
         />
         <button>Search</button>
       </form>
-      <button id="search-form-delete" onClick={() => setShowNumber(0)}>
-        x
+      <button id="search-form-back" onClick={() => setShowNumber(0)}>
+        Back
       </button>
     </div>
   );

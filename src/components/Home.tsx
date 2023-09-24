@@ -16,7 +16,7 @@ import {
 import AuthContext from "../context/AuthContext";
 import EditPlantForm from "./EditPlantForm";
 import ClickedPlantDetails from "./ClickedPlantDetails";
-
+import DeleteConfirmation from "./DeleteConfirmation";
 const Home = () => {
   const { user } = useContext(AuthContext);
   const [showNumber, setShowNumber] = useState(0);
@@ -26,7 +26,8 @@ const Home = () => {
   const [searchedPlant, setSearchedPlant] = useState<PerenualPlant | null>(
     null
   );
-
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+  const [plantToDelete, setPlantToDelete] = useState<Plant | null>(null);
   const searchPlants = async (query: string): Promise<void> => {
     setSearchResults((await getPlantsBySearch(query)).data);
   };
@@ -51,12 +52,40 @@ const Home = () => {
     loadUserPlants();
   };
 
+  // const deletePlantHandler = async (
+  //   googleId: string,
+  //   _id: string
+  // ): Promise<void> => {
+  //   await deletePlant(googleId, _id);
+  //   loadUserPlants();
+  // };
+
+  const showDeleteConfirmationPopup = (plant: Plant) => {
+    setPlantToDelete(plant);
+    setShowDeleteConfirmation(true);
+  };
+
+  const hideDeleteConfirmationPopup = () => {
+    setPlantToDelete(null);
+    setShowDeleteConfirmation(false);
+  };
+
   const deletePlantHandler = async (
     googleId: string,
     _id: string
   ): Promise<void> => {
-    await deletePlant(googleId, _id);
-    loadUserPlants();
+    const plantToDelete = plants.find((plant) => plant._id === _id);
+    if (plantToDelete) {
+      showDeleteConfirmationPopup(plantToDelete);
+    }
+  };
+
+  const confirmDeletePlant = async () => {
+    if (plantToDelete) {
+      await deletePlant(plantToDelete.googleId, plantToDelete._id!);
+      loadUserPlants();
+      hideDeleteConfirmationPopup();
+    }
   };
 
   useEffect(() => {
@@ -113,6 +142,12 @@ const Home = () => {
           setEditIndex={setEditIndex}
           editPlantHandler={editPlantHandler}
           plant={plants[editIndex]}
+        />
+      )}
+      {showDeleteConfirmation && (
+        <DeleteConfirmation
+          confirmDelete={confirmDeletePlant}
+          cancelDelete={hideDeleteConfirmationPopup}
         />
       )}
     </main>

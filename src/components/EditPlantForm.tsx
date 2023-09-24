@@ -44,7 +44,7 @@ const EditPlantForm = ({ setEditIndex, editPlantHandler, plant }: Props) => {
             <div id="edit-plant-image-container">
               <img src={plant.pic} alt={plant.commonName} />
             </div>
-            <label htmlFor="upload">Picture Upload</label>
+            <label htmlFor="upload">Upload Photo</label>
             <input ref={fileInputRef} type="file" name="upload" id="upload" />
           </div>
           <div>
@@ -68,7 +68,7 @@ const EditPlantForm = ({ setEditIndex, editPlantHandler, plant }: Props) => {
             />
           </div>
           <div id="edit-plant-button-container">
-            <button>EDIT PLANT</button>
+            <button>Edit Plant</button>
           </div>
         </form>
         <button id="cancel" onClick={() => setEditIndex(null)}>

@@ -11,6 +11,9 @@
     rgba(253, 252, 251, 0.8) 0%,
     rgba(226, 209, 195, 0.8) 100%
   );
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(35, 33, 33);
+  font-weight: 600;
   cursor: pointer;
 }
 

@@ -50,6 +50,7 @@
   width: 250px;
   height: 250px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .PlantCard p {
@@ -59,33 +60,39 @@
 }
 
 .PlantCard .watered {
-  color: white;
-  background-color: rgb(59, 59, 165);
+  color: black;
+  background-color: rgb(63, 135, 26);
   cursor: pointer;
+  font-weight: bold;
 }
 .PlantCard .watered:hover {
-  color: white;
-  background-color: rgb(128, 128, 161);
+  background-color: rgb(63, 135, 26);
+  opacity: 0.8;
 }
 
 .PlantCard .waterMe {
   color: black;
-  background-color: rgb(118, 188, 235);
+  background-color: rgb(93, 169, 220);
   cursor: pointer;
+  font-weight: bold;
 }
 .PlantCard .waterMe:hover {
-  background-color: rgb(148, 166, 177);
+  background-color: rgb(93, 169, 220);
+  opacity: 0.8;
 }
 
 .PlantCard .overdue {
   color: black;
-  background-color: rgb(240, 237, 34);
+  background-color: rgb(240, 182, 34);
   cursor: pointer;
+  font-weight: bold;
 }
 .PlantCard .overdue:hover {
-  background-color: rgb(206, 186, 9);
+  background-color: rgb(240, 182, 34);
+  opacity: 0.7;
 }
 
 .PlantCard #edit-button {
   cursor: pointer;
+  margin-top: 5px;
 }

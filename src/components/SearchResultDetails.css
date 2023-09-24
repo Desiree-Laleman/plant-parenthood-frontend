@@ -1,21 +1,31 @@
 .SearchResultDetails {
   z-index: 1;
 }
+
 .SearchResultDetails h2 {
   display: flex;
   justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(53, 50, 50);
+  font-weight: 600;
 }
+
 .SearchResultDetails div {
   display: flex;
   align-items: center;
   padding: 0 15px;
 }
+
 .SearchResultDetails ul {
   padding: 0 10px;
   list-style-type: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
 }
+
 .SearchResultDetails img {
   width: 250px;
   height: 250px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
+  border-radius: 8px;
 }

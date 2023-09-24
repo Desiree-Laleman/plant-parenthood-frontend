@@ -59,7 +59,7 @@ const AddPlantForm = ({
           value={nickName}
           onChange={(e) => setNickName(e.target.value)}
         />
-        <button>ADD PLANT</button>
+        <button>Add Plant</button>
       </form>
       <button onClick={() => setShowNumber(2)}>Cancel</button>
     </div>
