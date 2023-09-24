@@ -22,7 +22,12 @@ const SearchResultsCard = ({
       <div>
         <p>Common Name: {perenualPlant.common_name}</p>
         <p>Scientific Name: {perenualPlant.scientific_name}</p>
-        <p>Other Name: {perenualPlant.other_name}</p>
+        <p>
+          Other Name:{" "}
+          {perenualPlant.other_name.length > 0
+            ? perenualPlant.other_name
+            : "N/A"}
+        </p>
       </div>
       <img
         src={

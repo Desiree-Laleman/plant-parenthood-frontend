@@ -5,7 +5,6 @@ import PerenualPlant from "../models/PerenualPlant";
 interface Props {
   setShowNumber: (number: number) => void;
   searchResults: PerenualPlant[];
-
   searchedPlantById: (id: number) => void;
 }
 
@@ -15,20 +14,22 @@ const SearchResultsList = ({
   searchedPlantById,
 }: Props) => {
   return (
-    <>
-      <button id="search-list-cancel" onClick={() => setShowNumber(0)}>
+    <div className="SearchResultsList">
+      <button id="search-list-cancel" onClick={() => setShowNumber(1)}>
         x
       </button>
-      <ul className="SearchResultsList">
+      <ul>
         {searchResults.map((item) => (
-          <SearchResultsCard
-            perenualPlant={item}
-            setShowNumber={setShowNumber}
-            searchedPlantById={searchedPlantById}
-          />
+          <li className="list-item" key={item.id}>
+            <SearchResultsCard
+              perenualPlant={item}
+              setShowNumber={setShowNumber}
+              searchedPlantById={searchedPlantById}
+            />
+          </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 

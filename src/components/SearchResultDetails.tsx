@@ -19,10 +19,10 @@ const SearchResultDetails = ({
   return (
     <div className="SearchResultDetails pop-up-container">
       <div className="pop-up">
-        <h2>ADD PLANT FORM</h2>
+        <h2>{searchedPlant.common_name}</h2>
         <div id="plant-details-containers">
           <ul>
-            <li>Common Name: {searchedPlant.common_name}</li>
+            {/* <li>Common Name: {searchedPlant.common_name}</li> */}
             <li>Scientific Name: {searchedPlant.scientific_name}</li>
             <li>Cycle: {searchedPlant.cycle}</li>
             <li>
@@ -43,7 +43,7 @@ const SearchResultDetails = ({
                 ? searchedPlant.default_image?.thumbnail
                 : plantDefaultImage
             }
-            alt="plant image"
+            alt={searchedPlant.common_name}
           />
         </div>
         <AddPlantForm

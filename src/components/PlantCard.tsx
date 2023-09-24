@@ -46,7 +46,7 @@ const PlantCard = ({
       <p>{plant.nickName}</p>
       {calculateTimeRemaining(plant) < -1 ? (
         <button className="overdue" onClick={waterButtonHandler}>
-          Overdue
+          Overdue <i className="fa-solid fa-triangle-exclamation"></i>
         </button>
       ) : calculateTimeRemaining(plant) > -1 &&
         calculateTimeRemaining(plant) < 0 ? (
