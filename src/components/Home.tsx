@@ -17,6 +17,7 @@ import AuthContext from "../context/AuthContext";
 import EditPlantForm from "./EditPlantForm";
 import ClickedPlantDetails from "./ClickedPlantDetails";
 import DeleteConfirmation from "./DeleteConfirmation";
+import PhotoSearchForm from "./PhotoSearchForm";
 const Home = () => {
   const { user } = useContext(AuthContext);
   const [showNumber, setShowNumber] = useState(0);
@@ -28,6 +29,7 @@ const Home = () => {
   );
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [plantToDelete, setPlantToDelete] = useState<Plant | null>(null);
+
   const searchPlants = async (query: string): Promise<void> => {
     setSearchResults((await getPlantsBySearch(query)).data);
   };
@@ -123,6 +125,12 @@ const Home = () => {
         <ClickedPlantDetails
           setShowNumber={setShowNumber}
           plant={searchedPlant}
+        />
+      )}
+      {showNumber === 5 && (
+        <PhotoSearchForm
+          setShowNumber={setShowNumber}
+          searchPlants={searchPlants}
         />
       )}
       {showNumber != 2 && plants.length ? (

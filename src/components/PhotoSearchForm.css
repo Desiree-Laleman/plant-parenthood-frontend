@@ -1,0 +1,8 @@
+.PhotoSearchForm form {
+  display: flex;
+  align-items: center;
+}
+
+.PhotoSearchForm form input {
+  margin-right: -70px;
+}
