@@ -15,7 +15,6 @@ const SearchResultDetails = ({
   addPlantHandler,
   searchedPlant,
 }: Props) => {
-  console.log(searchedPlant.watering);
   return (
     <div className="SearchResultDetails pop-up-container">
       <div className="pop-up">

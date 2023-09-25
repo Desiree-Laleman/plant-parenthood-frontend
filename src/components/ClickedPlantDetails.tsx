@@ -8,7 +8,6 @@ interface Props {
 }
 
 const ClickedPlantDetails = ({ setShowNumber, plant }: Props) => {
-  console.log(plant);
   return (
     <div className="ClickedPlantDetails pop-up-container">
       <div className="pop-up">

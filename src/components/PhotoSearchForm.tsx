@@ -22,8 +22,6 @@ const PhotoSearchForm = ({ setShowNumber, searchPlants }: Props) => {
       reader.onloadend = async () => {
         const base64data: string = reader.result as string;
         const result = await decipherImage(base64data);
-        console.log(result);
-        // call a function from the service that hits the Perenual API using the name from the result.
         searchPlants(result.result.classification.suggestions[0].name);
         setShowNumber(2);
       };

@@ -35,7 +35,7 @@ const EditPlantForm = ({ setEditIndex, editPlantHandler, plant }: Props) => {
     await editPlantHandler(update);
     setEditIndex(null);
   };
-  console.log(plant.watering);
+
   return (
     <div className="EditPlantForm pop-up-container">
       <div className="pop-up">
