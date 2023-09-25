@@ -1,6 +1,6 @@
 .SearchResultsCard {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   padding: 10px 0;
   margin: 5px 0;
@@ -24,11 +24,11 @@
     rgba(226, 209, 195, 0.6) 100%
   );
 }
-
 .SearchResultsCard div p {
   margin: 0px;
   padding: 0 15px;
 }
 .SearchResultsCard img {
   width: 15%;
+  margin-right: 25px;
 }

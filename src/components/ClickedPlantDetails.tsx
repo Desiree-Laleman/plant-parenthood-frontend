@@ -39,7 +39,7 @@ const ClickedPlantDetails = ({ setShowNumber, plant }: Props) => {
             <li>Flowering: {plant.flowers ? "True" : "False"}</li>
             <li>
               {plant.flowering_season === null
-                ? `Flowering Season: Not Announced`
+                ? `Flowering Season: N/A`
                 : `Flowering Season: ${plant.flowering_season}`}
             </li>
             <li>Growth Rate: {plant.growth_rate}</li>
