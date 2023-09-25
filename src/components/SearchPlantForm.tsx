@@ -16,7 +16,7 @@ const SearchPlantForm = ({ setShowNumber, searchPlants }: Props) => {
   };
 
   return (
-    <div className="SearchPlantForm">
+    <div className="SearchPlantForm generic-form-container">
       <form onSubmit={(e) => handleSubmit(e)}>
         <input
           type="text"
@@ -28,7 +28,8 @@ const SearchPlantForm = ({ setShowNumber, searchPlants }: Props) => {
         />
         <button>Search</button>
       </form>
-      <button id="search-form-back" onClick={() => setShowNumber(0)}>
+      <button onClick={() => setShowNumber(5)}>Search Plant By Photo?</button>
+      <button className="search-form-back" onClick={() => setShowNumber(0)}>
         Back
       </button>
     </div>
