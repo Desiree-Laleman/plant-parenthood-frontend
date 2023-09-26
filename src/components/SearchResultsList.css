@@ -8,7 +8,7 @@
   margin: 0 10px 10px 10px;
 }
 
-.SearchResultsList p {
+.SearchResultsList #search-not-found {
   color: white;
   font-size: 25px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

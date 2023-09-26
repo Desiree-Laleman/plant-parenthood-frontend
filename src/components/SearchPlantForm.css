@@ -1,0 +1,9 @@
+.SearchPlantForm #search-button {
+  padding: 10px;
+}
+
+@media only screen and (min-width: 397px) {
+  .SearchPlantForm #search-button {
+    padding: 8px 45px;
+  }
+}

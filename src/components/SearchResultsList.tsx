@@ -20,7 +20,7 @@ const SearchResultsList = ({
           x
         </button>
       ) : (
-        <p>Search not found</p>
+        <p id="search-not-found">Search not found</p>
       )}
 
       <ul>

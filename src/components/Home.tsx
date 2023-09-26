@@ -18,6 +18,7 @@ import EditPlantForm from "./EditPlantForm";
 import ClickedPlantDetails from "./ClickedPlantDetails";
 import DeleteConfirmation from "./DeleteConfirmation";
 import PhotoSearchForm from "./PhotoSearchForm";
+import homeBackground from "../assets/home-background.jpg";
 const Home = () => {
   const { user } = useContext(AuthContext);
   const [showNumber, setShowNumber] = useState(0);
@@ -98,6 +99,7 @@ const Home = () => {
 
   return (
     <main className="Home">
+      <img src={homeBackground} alt="background" id="background-image" />
       <button id="add-plant" onClick={() => setShowNumber(1)}>
         Add Plant
       </button>

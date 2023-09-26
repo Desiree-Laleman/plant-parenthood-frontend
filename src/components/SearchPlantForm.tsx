@@ -26,7 +26,7 @@ const SearchPlantForm = ({ setShowNumber, searchPlants }: Props) => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button>Search</button>
+        <button id="search-button">Search</button>
       </form>
       <button onClick={() => setShowNumber(5)}>Search Plant By Photo?</button>
       <button className="search-form-back" onClick={() => setShowNumber(0)}>

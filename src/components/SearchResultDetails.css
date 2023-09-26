@@ -18,6 +18,10 @@
   flex-wrap: wrap;
 }
 
+.SearchResultDetails section {
+  text-align: center;
+}
+
 .SearchResultDetails ul {
   padding: 0 10px;
   list-style-type: none;

@@ -18,7 +18,9 @@ const SearchResultDetails = ({
   return (
     <div className="SearchResultDetails pop-up-container">
       <div className="pop-up">
-        <h2>{searchedPlant.common_name}</h2>
+        <section>
+          <h2>{searchedPlant.common_name}</h2>
+        </section>
         <div id="plant-details-containers">
           <ul>
             {/* <li>Common Name: {searchedPlant.common_name}</li> */}
