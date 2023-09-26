@@ -6,7 +6,7 @@
 
 .AddPlantForm form button {
   background-color: rgb(39, 78, 19);
-  margin: 0 5px;
+  margin: 4px 5px;
 }
 
 .AddPlantForm form button:hover {
@@ -15,7 +15,7 @@
 }
 
 .AddPlantForm button {
-  margin: 0 5px;
+  margin: 4px 5px;
   background-color: #555;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }

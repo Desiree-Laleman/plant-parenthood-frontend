@@ -8,6 +8,12 @@
   margin: 0 10px 10px 10px;
 }
 
+.SearchResultsList p {
+  color: white;
+  font-size: 25px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .SearchResultsList #search-list-cancel {
   position: absolute;
   top: -35px;
