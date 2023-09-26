@@ -15,9 +15,14 @@ const SearchResultsList = ({
 }: Props) => {
   return (
     <div className="SearchResultsList">
-      <button id="search-list-cancel" onClick={() => setShowNumber(1)}>
-        x
-      </button>
+      {searchResults.length ? (
+        <button id="search-list-cancel" onClick={() => setShowNumber(1)}>
+          x
+        </button>
+      ) : (
+        <p>Search not found</p>
+      )}
+
       <ul>
         {searchResults.map((item) => (
           <li className="list-item" key={item.id}>

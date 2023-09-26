@@ -1,8 +1,29 @@
 .PhotoSearchForm form {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .PhotoSearchForm form input {
   margin-right: -70px;
+}
+
+.PhotoSearchForm label {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+@media only screen and (min-width: 768px) {
+  .PhotoSearchForm form {
+    flex-direction: row;
+  }
+
+  .PhotoSearchForm label {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 16px;
+  }
 }
