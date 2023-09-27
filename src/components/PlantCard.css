@@ -58,10 +58,39 @@
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  margin: 15px 0 0 0;
 }
 
 .PlantCard #watered-date-container {
   display: flex;
+}
+
+.PlantCard form {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin: 8px 0;
+}
+.PlantCard label {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 5px;
+}
+.PlantCard #date-input {
+  display: flex;
+}
+.PlantCard form input {
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  flex: 3;
+}
+.PlantCard form button {
+  padding: 5px 0;
+  flex: 1;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-left: 5px;
 }
 
 .PlantCard #calendar {
@@ -72,41 +101,47 @@
 
 .PlantCard .watered {
   color: black;
-  background-color: rgb(63, 135, 26);
-  cursor: pointer;
+  /* background-color: rgb(63, 135, 26); */
+  /* cursor: pointer; */
   font-weight: bold;
 }
-.PlantCard .watered:hover {
+/* .PlantCard .watered:hover {
   background-color: rgb(63, 135, 26);
   opacity: 0.8;
-}
+} */
 
 .PlantCard .waterMe {
   color: black;
-  background-color: rgb(93, 169, 220);
-  cursor: pointer;
+  /* background-color: rgb(93, 169, 220); */
+  background-color: rgb(123, 175, 243);
+  border-radius: 5px;
+  /* cursor: pointer; */
   font-weight: bold;
   flex: 3;
+  padding: 3px 0;
 }
-.PlantCard .waterMe:hover {
+/* .PlantCard .waterMe:hover {
   background-color: rgb(93, 169, 220);
   opacity: 0.8;
-}
+} */
 
 .PlantCard .overdue {
   color: black;
   background-color: rgb(240, 182, 34);
-  cursor: pointer;
+  border-radius: 5px;
+  /* cursor: pointer; */
   font-weight: bold;
+  padding: 3px 0;
 }
-.PlantCard .overdue:hover {
+/* .PlantCard .overdue:hover {
   background-color: rgb(240, 182, 34);
   opacity: 0.7;
-}
+} */
 
 .PlantCard #edit-button {
   cursor: pointer;
   margin-top: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* .PlantCard .react-calendar button {
