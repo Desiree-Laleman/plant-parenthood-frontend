@@ -2,6 +2,7 @@ import Calendar from "react-calendar";
 import Plant from "../models/Plant";
 import "./PlantCard.css";
 import { useState } from "react";
+import "react-calendar/dist/Calendar.css";
 
 interface Props {
   plant: Plant;
@@ -34,6 +35,10 @@ const PlantCard = ({
     setShowNumber(0);
   };
 
+  const calClickHandler = () => {
+    setShowCalendar((prev) => !prev);
+  };
+
   const waterButtonHandler = () => {
     const plantCopy = { ...plant };
     plantCopy.waterDate = new Date();
@@ -44,6 +49,8 @@ const PlantCard = ({
     await searchedPlantById(plant.perenualId);
     setShowNumber(4);
   };
+
+  console.log(date);
 
   return (
     <li className="PlantCard">
@@ -68,10 +75,12 @@ const PlantCard = ({
             Water in {Math.ceil(calculateTimeRemaining(plant))} days
           </button>
         )}
-        <button id="calendar" onClick={() => setShowCalendar((prev) => !prev)}>
+        <button id="calendar" onClick={calClickHandler}>
           <i className="fa-regular fa-calendar"></i>
         </button>
-        {showCalendar && <Calendar onChange={setDate} value={date} />}
+        <div id="calendar-container">
+          {showCalendar && <Calendar onChange={setDate} value={date} />}
+        </div>
       </div>
       <button id="edit-button" onClick={handleClick}>
         Edit

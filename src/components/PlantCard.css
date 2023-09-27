@@ -107,3 +107,34 @@
   cursor: pointer;
   margin-top: 5px;
 }
+
+.PlantCard #calendar-container button {
+  color: initial;
+  padding: initial;
+  background: initial;
+  border-radius: initial;
+  border: initial;
+  cursor: pointer;
+}
+
+/* .PlantCard .react-calendar {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+} */
+/* .PlantCard .react-calendar_navigation,
+.react-calendar_viewCounter {
+  position: relative;
+  background-image: linear-gradient(135deg, #94e08f 0%, #45a827 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 27px 24px 20px 24px;
+  border-radius: 10px;
+  margin: 15px;
+} */

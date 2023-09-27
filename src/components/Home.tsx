@@ -96,7 +96,6 @@ const Home = () => {
       loadUserPlants();
     })();
   }, [user, loadUserPlants]);
-
   return (
     <main className="Home">
       <img src={homeBackground} alt="background" id="background-image" />
