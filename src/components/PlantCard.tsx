@@ -78,10 +78,8 @@ const PlantCard = ({
         <button id="calendar" onClick={calClickHandler}>
           <i className="fa-regular fa-calendar"></i>
         </button>
-        <div id="calendar-container">
-          {showCalendar && <Calendar onChange={setDate} value={date} />}
-        </div>
       </div>
+      {showCalendar && <Calendar onChange={setDate} value={date} />}
       <button id="edit-button" onClick={handleClick}>
         Edit
       </button>

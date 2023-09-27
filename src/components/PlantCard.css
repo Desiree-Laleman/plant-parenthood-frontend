@@ -51,6 +51,7 @@
   height: 250px;
   cursor: pointer;
   border-radius: 5px;
+  align-items: center;
 }
 
 .PlantCard p {
@@ -108,14 +109,14 @@
   margin-top: 5px;
 }
 
-.PlantCard #calendar-container button {
+/* .PlantCard .react-calendar button {
   color: initial;
   padding: initial;
   background: initial;
   border-radius: initial;
   border: initial;
   cursor: pointer;
-}
+} */
 
 /* .PlantCard .react-calendar {
   position: fixed;
@@ -137,4 +138,12 @@
   padding: 27px 24px 20px 24px;
   border-radius: 10px;
   margin: 15px;
+} */
+
+/* .PlantCard .react-calendar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 } */
