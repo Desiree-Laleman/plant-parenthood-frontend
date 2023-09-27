@@ -13,6 +13,10 @@ interface Props {
   calculateTimeRemaining: (plant: Plant) => number;
 }
 
+type ValuePiece = Date | null;
+
+type Value = ValuePiece | [ValuePiece, ValuePiece];
+
 const PlantCard = ({
   plant,
   deletePlantHandler,
@@ -22,7 +26,8 @@ const PlantCard = ({
   searchedPlantById,
   calculateTimeRemaining,
 }: Props) => {
-  // const [showCalendar, setShowCalendar] = useState(false);
+  const [date, setDate] = useState<Value>(new Date());
+  const [showCalendar, setShowCalendar] = useState(false);
 
   const handleClick = () => {
     setEditIndex();
@@ -63,12 +68,10 @@ const PlantCard = ({
             Water in {Math.ceil(calculateTimeRemaining(plant))} days
           </button>
         )}
-        <button
-          id="calendar"
-          // onClick={() => setShowCalendar(true), <Calendar onChange={date} value={date} />}
-        >
+        <button id="calendar" onClick={() => setShowCalendar((prev) => !prev)}>
           <i className="fa-regular fa-calendar"></i>
         </button>
+        {showCalendar && <Calendar onChange={setDate} value={date} />}
       </div>
       <button id="edit-button" onClick={handleClick}>
         Edit
