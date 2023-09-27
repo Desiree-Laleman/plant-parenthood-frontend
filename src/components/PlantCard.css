@@ -59,6 +59,16 @@
   font-weight: bold;
 }
 
+.PlantCard #watered-date-container {
+  display: flex;
+}
+
+.PlantCard #calendar {
+  padding: 8px 16px;
+  margin-left: 4px;
+  flex: 1;
+}
+
 .PlantCard .watered {
   color: black;
   background-color: rgb(63, 135, 26);
@@ -75,6 +85,7 @@
   background-color: rgb(93, 169, 220);
   cursor: pointer;
   font-weight: bold;
+  flex: 3;
 }
 .PlantCard .waterMe:hover {
   background-color: rgb(93, 169, 220);
