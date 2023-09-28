@@ -1,6 +1,7 @@
 import SearchResultsCard from "./SearchResultsCard";
 import "./SearchResultsList.css";
 import PerenualPlant from "../models/PerenualPlant";
+import clover_loading from "../assets/Clover_Loading.gif";
 
 interface Props {
   setShowNumber: (number: number) => void;
@@ -16,7 +17,11 @@ const SearchResultsList = ({
   return (
     <div className="SearchResultsList">
       {searchResults === null ? (
-        <p>loading...</p>
+        <img
+          id="clover-loading"
+          src={clover_loading}
+          alt="clover loading gif"
+        />
       ) : searchResults.length ? (
         <button id="search-list-cancel" onClick={() => setShowNumber(1)}>
           x
