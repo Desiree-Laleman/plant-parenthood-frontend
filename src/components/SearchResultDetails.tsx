@@ -23,7 +23,6 @@ const SearchResultDetails = ({
         </section>
         <div id="plant-details-containers">
           <ul>
-            {/* <li>Common Name: {searchedPlant.common_name}</li> */}
             <li>Scientific Name: {searchedPlant.scientific_name}</li>
             <li>Cycle: {searchedPlant.cycle}</li>
             <li>

@@ -1,7 +1,6 @@
-// import Calendar from "react-calendar";
 import Plant from "../models/Plant";
 import "./PlantCard.css";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import "react-calendar/dist/Calendar.css";
 
 interface Props {
@@ -24,7 +23,6 @@ const PlantCard = ({
   calculateTimeRemaining,
 }: Props) => {
   const [date, setDate] = useState(new Date().toISOString().substr(0, 10));
-  // const [showCalendar, setShowCalendar] = useState(false);
 
   const handleClick = () => {
     setEditIndex();
@@ -38,22 +36,10 @@ const PlantCard = ({
     editPlantHandler(plantCopy);
   };
 
-  // const calClickHandler = () => {
-  //   setShowCalendar((prev) => !prev);
-  // };
-
-  // const waterButtonHandler = () => {
-  //   const plantCopy = { ...plant };
-  //   plantCopy.waterDate = new Date();
-  //   editPlantHandler(plantCopy);
-  // };
-
   const seeDetails = async () => {
     await searchedPlantById(plant.perenualId);
     setShowNumber(4);
   };
-
-  console.log(date);
 
   return (
     <li className="PlantCard">
@@ -63,28 +49,7 @@ const PlantCard = ({
         onClick={() => seeDetails()}
       />
       <p>{plant.nickName}</p>
-      {/* <div id="watered-date-container">
-        {calculateTimeRemaining(plant) < -1 ? (
-          <button className="overdue" onClick={waterButtonHandler}>
-            Overdue <i className="fa-solid fa-triangle-exclamation"></i>
-          </button>
-        ) : calculateTimeRemaining(plant) > -1 &&
-          calculateTimeRemaining(plant) < 0 ? (
-          <button className="waterMe" onClick={waterButtonHandler}>
-            Water Me!
-          </button>
-        ) : (
-          <button className="watered" onClick={waterButtonHandler}>
-            Water in {Math.ceil(calculateTimeRemaining(plant))} days
-          </button>
-        )}
-        <button id="calendar" onClick={calClickHandler}>
-          <i className="fa-regular fa-calendar"></i>
-        </button>
-      </div>
-      {showCalendar && <Calendar onChange={setDate} value={date} />} */}
       <div>
-        {/* <p>Water in {Math.ceil(calculateTimeRemaining(plant))} days</p> */}
         {calculateTimeRemaining(plant) < -1 ? (
           <p className="overdue">
             Overdue <i className="fa-solid fa-triangle-exclamation"></i>

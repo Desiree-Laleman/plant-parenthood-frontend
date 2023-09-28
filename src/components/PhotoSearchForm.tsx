@@ -1,7 +1,6 @@
 import { FormEvent, useRef } from "react";
 import "./PhotoSearchForm.css";
 import { decipherImage } from "../services/plantAIService";
-import { getPlantsBySearch } from "../services/perenualService";
 
 interface Props {
   setShowNumber: (number: number) => void;

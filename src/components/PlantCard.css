@@ -68,7 +68,6 @@
 .PlantCard form {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   margin: 8px 0;
 }
 .PlantCard label {
@@ -101,84 +100,28 @@
 
 .PlantCard .watered {
   color: black;
-  /* background-color: rgb(63, 135, 26); */
-  /* cursor: pointer; */
   font-weight: bold;
 }
-/* .PlantCard .watered:hover {
-  background-color: rgb(63, 135, 26);
-  opacity: 0.8;
-} */
 
 .PlantCard .waterMe {
   color: black;
-  /* background-color: rgb(93, 169, 220); */
   background-color: rgb(123, 175, 243);
   border-radius: 5px;
-  /* cursor: pointer; */
   font-weight: bold;
   flex: 3;
   padding: 3px 0;
 }
-/* .PlantCard .waterMe:hover {
-  background-color: rgb(93, 169, 220);
-  opacity: 0.8;
-} */
 
 .PlantCard .overdue {
   color: black;
   background-color: rgb(240, 182, 34);
   border-radius: 5px;
-  /* cursor: pointer; */
   font-weight: bold;
   padding: 3px 0;
 }
-/* .PlantCard .overdue:hover {
-  background-color: rgb(240, 182, 34);
-  opacity: 0.7;
-} */
 
 .PlantCard #edit-button {
   cursor: pointer;
   margin-top: 5px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-
-/* .PlantCard .react-calendar button {
-  color: initial;
-  padding: initial;
-  background: initial;
-  border-radius: initial;
-  border: initial;
-  cursor: pointer;
-} */
-
-/* .PlantCard .react-calendar {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-} */
-/* .PlantCard .react-calendar_navigation,
-.react-calendar_viewCounter {
-  position: relative;
-  background-image: linear-gradient(135deg, #94e08f 0%, #45a827 100%);
-  display: flex;
-  flex-direction: column;
-  padding: 27px 24px 20px 24px;
-  border-radius: 10px;
-  margin: 15px;
-} */
-
-/* .PlantCard .react-calendar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-} */

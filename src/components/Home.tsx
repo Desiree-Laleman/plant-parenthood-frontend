@@ -57,14 +57,6 @@ const Home = () => {
     loadUserPlants();
   };
 
-  // const deletePlantHandler = async (
-  //   googleId: string,
-  //   _id: string
-  // ): Promise<void> => {
-  //   await deletePlant(googleId, _id);
-  //   loadUserPlants();
-  // };
-
   const showDeleteConfirmationPopup = (plant: Plant) => {
     setPlantToDelete(plant);
     setShowDeleteConfirmation(true);
