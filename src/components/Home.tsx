@@ -24,7 +24,9 @@ const Home = () => {
   const [showNumber, setShowNumber] = useState(0);
   const [editIndex, setEditIndex] = useState<number | null>(null);
   const [plants, setPlants] = useState<Plant[]>([]);
-  const [searchResults, setSearchResults] = useState<PerenualPlant[]>([]);
+  const [searchResults, setSearchResults] = useState<PerenualPlant[] | null>(
+    null
+  );
   const [searchedPlant, setSearchedPlant] = useState<PerenualPlant | null>(
     null
   );

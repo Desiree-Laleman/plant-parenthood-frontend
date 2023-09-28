@@ -1,7 +1,7 @@
 // import Calendar from "react-calendar";
 import Plant from "../models/Plant";
 import "./PlantCard.css";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import "react-calendar/dist/Calendar.css";
 
 interface Props {
@@ -23,7 +23,7 @@ const PlantCard = ({
   searchedPlantById,
   calculateTimeRemaining,
 }: Props) => {
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(new Date().toISOString().substr(0, 10));
   // const [showCalendar, setShowCalendar] = useState(false);
 
   const handleClick = () => {
@@ -102,8 +102,9 @@ const PlantCard = ({
           <div id="date-input">
             <input
               type="date"
-              defaultValue={date.toString()}
               value={date}
+              id="date"
+              name="date"
               onChange={(e) => {
                 setDate(e.target.value);
               }}
